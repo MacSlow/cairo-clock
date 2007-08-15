@@ -1,0 +1,8 @@
+cairo-clock (0.3.2-1) experimental; urgency=low
+
+  * added new themes
+  * added and fixed patch for 24h-mode supplied by Darryll
+  * fixed some of my own themes
+
+ -- Mirco Müller <macslow@bangang.de>  Sat,  1 Apr 2006 20:45:10 +0100
+

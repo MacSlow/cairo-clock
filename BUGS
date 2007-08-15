@@ -1,0 +1,5 @@
+- if redraws don't happen every second the needed refresh after a window-size
+change via the preferences-dialog only happens on a minute-interval
+
+- the close-button in the about-dialog does not work, due to some issue in
+gtk+ or glade

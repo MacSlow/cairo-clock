@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=MacSlow's Cairo-Clock
+Name[de]=MacSlow's Cairo-Uhr
+Name[en]=MacSlow's Cairo-Clock
+Name[fr]=MacSlow's Cairo-Heure
+Comment=a super fine analog clock
+Comment[de]=eine total tolle Analoguhr
+Comment[en]=a super fine analog clock
+Comment[fr]=une formidable heure analogue
+Exec=cairo-clock
+Icon=cairo-clock
+Categories=GNOME;Application;Utility;

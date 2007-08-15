@@ -1,0 +1,5 @@
+- localization
+- code-cleanup
+- online-help (yelp)
+- use GOption instead of getopt
+- use GList instead of my home-grown linked-list stuff

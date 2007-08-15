@@ -1,0 +1,69 @@
+2007-08-14 Mirco Mueller <macslow@bangang.de>
+
+	* src/cairo-clock.c, glade/cairo-clock.glade: added smooth animations
+	for the hands, fixed flashing of rectangle on startup, default size of
+	clock-window is using non-power-of-two values to avoid triggering the
+	xserver-bug...
+
+		https://bugs.freedesktop.org/show_bug.cgi?id=11109
+
+	Also stated cleaning up the code a bit.
+
+	* man/cairo-clock.1.gz: added documentation for the animation-smoothness
+	setting
+
+2006-04-01 Mirco Mueller <macslow@bangang.de>
+
+	* man/cairo-clock.1.gz: made man-page to reflect the addition of the 24h
+	mode and made other addition/fixes
+
+	* src/cairo-clock.c: added 24h support, based on Darryll's patch and
+	fixed and added missing bits in his patch also fully exposing this to
+	the preferences dialog too
+
+	* glade/cairo-clock.glade: added 24h-checkmark widget, updated
+	about-dialog
+
+	* configure.ac, src/cairo-clock.c: bumped version to 0.3.2
+
+	* themes/*: added many new themes, mostly stuff I got from other people
+	over the recent weeks, take a look at the AUTHORS file for an exact list
+	of who supplied which theme
+
+2006-02-21 Mirco Mueller <macslow@bangang.de>
+
+	* man/cairo-clock.1.gz: corrected man-page to reflect changes of commandline
+	handling and options
+
+	* themes/funky: added new theme
+
+2006-02-16 Mirco Mueller <macslow@bangang.de>
+
+	* src/cairo-clock.c: added input-shape support, using getopt now for
+	commandline-parsing
+
+	* configure.ac, src/cairo-clock.c: bumped version to 0.3.1
+
+2006-02-14 Mirco Mueller <macslow@bangang.de>
+
+	* themes/radium: added new theme
+
+2006-02-10 Mirco Mueller <macslow@bangang.de>
+
+	* src/cairo-clock.c: moved up to using librsvg >= 2.13.91, replaced
+	rsvg_cairo_render() with rsvg_handle_render_cairo()
+
+	* themes/zen: added new theme
+
+	* themes/antique: added new theme, mostly done by Timo Sakari Mikkolainen
+
+2006-02-08 Mirco Mueller <macslow@bangang.de>
+
+	* glade/cairo-clock.glade, src/cairo-clock.c: added sticky-feature
+
+	* src/cairo-clock.c: fixed command-line parsing bugs
+
+Copyright 2006 Mirco Mueller
+Copying and distribution of this file, with or without modification, are
+permitted provided the copyright notice and this notice are preserved.
+
