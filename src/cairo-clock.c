@@ -1504,6 +1504,13 @@ main (int    argc,
 
 	g_pMainWindow = glade_xml_get_widget (pGladeXml,
 					      "mainWindow");
+
+	if (!gdk_screen_is_composited (gtk_widget_get_screen (g_pMainWindow)))
+	{
+		printf ("You are not running under a composited desktop!\n");
+		exit (2);
+	}
+
 	g_pPopUpMenu = glade_xml_get_widget (pGladeXml,
 					     "popUpMenu");
 	pSettingsMenuItem = glade_xml_get_widget (pGladeXml,

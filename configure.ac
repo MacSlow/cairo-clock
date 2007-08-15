@@ -61,7 +61,7 @@ dnl GLIB
 PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.8.0 gobject-2.0 gthread-2.0 gmodule-2.0])
 
 dnl GTK
-PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.8.0])
+PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.10.0])
 
 dnl GTK Deps+Libglade
 PKG_CHECK_MODULES([GTK_DEP],
