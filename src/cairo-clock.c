@@ -1375,7 +1375,7 @@ main (int    argc,
 	{
 		while ((iCurrentOption = getopt_long (argc,
 						      argv,
-						      "x:y:w:g:sdlt:opbiefrhv",
+						      "x:y:w:g:sdlt:opbiefr:hv",
 						      aOptions,
 						      &iOptionIndex)) != -1)
 		{
