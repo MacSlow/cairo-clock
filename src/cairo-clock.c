@@ -38,18 +38,21 @@
 #include <strings.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <getopt.h>
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 #include <glade/glade.h>
 #include <librsvg/rsvg.h>
 #include <librsvg/rsvg-cairo.h>
+#include <glib/gi18n.h>
 
 #if !GTK_CHECK_VERSION(2,9,0)
 #include <X11/Xlib.h>
 #include <X11/extensions/shape.h>
 #include <gdk/gdkx.h>
 #endif
+
+#define GETTEXT_PACKAGE "cairo-clock"
+#define LOCALEDIR "mo"
 
 #define SECOND_INTERVAL	 1000
 #define MINUTE_INTERVAL	60000
@@ -1341,7 +1344,7 @@ main (int    argc,
 					    "open window with this width",
 					    "WIDTH"},
 					   {"height",
-					    'g',
+					    'h',
 					    0,
 					    G_OPTION_ARG_INT,
 					    &g_iDefaultHeight,
@@ -1432,6 +1435,10 @@ main (int    argc,
 					    "print version of program and exit",
 					    NULL},
 					   {NULL}};
+
+	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+	textdomain (GETTEXT_PACKAGE);
 
 	/* read in names of all installed themes */
 	pcFilename = get_user_theme_path ();
