@@ -6,7 +6,7 @@
 **    cairo-clock
 **
 ** author:
-**    Mirco "MacSlow" Mueller <macslow@bangang.de>, <macslow@gmail.com>
+**    Mirco "MacSlow" Müller <macslow@bangang.de>, <macslow@gmail.com>
 **
 ** created: .
 **    10.1.2006 (or so)
@@ -127,6 +127,7 @@ gint		  g_iMonth;
 gchar		  g_acDate[6];
 static time_t	  g_timeOfDay;
 struct tm*	  g_pTime;
+gint		  g_i12			 = 0;	/* 12h hour-hand toggle       */
 gint		  g_i24			 = 0;	/* 24h hour-hand toggle       */
 gint		  g_iShowDate		 = 0;	/* date-display toggle        */
 gint		  g_iShowSeconds	 = 0;	/* seconds-hand toggle        */
@@ -134,7 +135,8 @@ gint		  g_iDefaultX		 = -1;	/* x-pos of top-left corner   */
 gint		  g_iDefaultY		 = -1;	/* y-pos, < 0 means undefined */
 gint		  g_iDefaultWidth	 = 127;	/* clock-window used width ...*/
 gint		  g_iDefaultHeight	 = 127;	/* ... and height             */
-gchar		  g_acTheme[80];
+static gchar*	  g_pcTheme;
+gchar		  g_acTheme[80]		 = "default\0";
 gint		  g_iKeepOnTop		 = 0;
 gint		  g_iAppearInPager	 = 0;
 gint		  g_iAppearInTaskbar	 = 0;
@@ -143,6 +145,7 @@ GtkWidget*	  g_pMainWindow		 = NULL;
 GtkWidget*	  g_pPopUpMenu		 = NULL;
 GtkWidget*	  g_pSettingsDialog	 = NULL;
 GtkWidget*	  g_pInfoDialog		 = NULL;
+GtkWidget*	  g_pErrorDialog	 = NULL;
 GtkWidget*	  g_pTableStartupSize	 = NULL;
 GtkWidget*	  g_pComboBoxStartupSize = NULL;
 GtkWidget*	  g_pSpinButtonWidth	 = NULL;
@@ -158,6 +161,8 @@ cairo_surface_t*  g_pBackgroundSurface	 = NULL;
 cairo_surface_t*  g_pForegroundSurface	 = NULL;
 gint		  g_iRefreshRate	 = 30;
 GTimer*		  g_pTimer		 = NULL;
+gboolean	  bPrintThemeList	 = FALSE;
+gboolean	  bPrintVersion		 = FALSE;
 
 static void
 render (gint iWidth,
@@ -167,6 +172,13 @@ static void
 update_input_shape (GtkWidget* pWindow,
 		    gint       iWidth,
 		    gint       iHeight);
+
+static void
+on_info_close (GtkDialog* pDialog,
+	       gpointer   data)
+{
+	gtk_widget_hide (GTK_WIDGET (pDialog));
+}
 
 static void
 draw_background (cairo_t* pDrawingContext,
@@ -182,9 +194,12 @@ draw_background (cairo_t* pDrawingContext,
 	cairo_paint (pDrawingContext);
 
 	/* draw stuff */
-	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_DROP_SHADOW], pDrawingContext);
-	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_FACE], pDrawingContext);
-	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_MARKS], pDrawingContext);
+	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_DROP_SHADOW],
+				  pDrawingContext);
+	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_FACE],
+				  pDrawingContext);
+	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_MARKS],
+				  pDrawingContext);
 }
 
 static void
@@ -201,9 +216,12 @@ draw_foreground (cairo_t* pDrawingContext,
 	cairo_paint (pDrawingContext);
 
 	/* draw stuff */
-	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_FACE_SHADOW], pDrawingContext);
-	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_GLASS], pDrawingContext);
-	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_FRAME], pDrawingContext);
+	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_FACE_SHADOW],
+				  pDrawingContext);
+	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_GLASS],
+				  pDrawingContext);
+	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_FRAME],
+				  pDrawingContext);
 }
 
 static cairo_surface_t*
@@ -545,17 +563,17 @@ on_startup_size_changed (GtkComboBox* pComboBox,
 	{
 		case SIZE_SMALL :
 			gtk_widget_set_sensitive (g_pTableStartupSize, FALSE);
-			gtk_window_resize (GTK_WINDOW (window), 64, 64);
+			gtk_window_resize (GTK_WINDOW (window), 50, 50);
 		break;
 
 		case SIZE_MEDIUM :
 			gtk_widget_set_sensitive (g_pTableStartupSize, FALSE);
-			gtk_window_resize (GTK_WINDOW (window), 128, 128);
+			gtk_window_resize (GTK_WINDOW (window), 100, 100);
 		break;
 
 		case SIZE_LARGE :
 			gtk_widget_set_sensitive (g_pTableStartupSize, FALSE);
-			gtk_window_resize (GTK_WINDOW (window), 256, 256);
+			gtk_window_resize (GTK_WINDOW (window), 200, 200);
 		break;
 
 		case SIZE_CUSTOM :
@@ -893,15 +911,6 @@ theme_entry_get_next (ThemeEntry* pEntry)
 
 	return pEntry->pNext;
 }
-
-/*static ThemeEntry*
-theme_entry_get_prev (ThemeEntry* pEntry)
-{
-	if (!pEntry)
-		return NULL;
-
-	return pEntry->pPrev;
-}*/
 
 static ThemeEntry*
 theme_entry_new (gchar* pcName,
@@ -1286,30 +1295,6 @@ update_input_shape (GtkWidget* pWindow,
 	}
 }
 
-static void
-print_usage (void)
-{
-	printf ("usage: cairo-clock [-options ...]\n");
-	printf ("options:\n");
-	printf ("    -x, --xposition X     x-position of the top-left window-corner\n");
-	printf ("    -y, --yposition Y     y-position of the top-left window-corner\n");
-	printf ("    -w, --width WIDTH     open window with this width\n");
-	printf ("    -g, --height HEIGHT   open window with this height\n");
-	printf ("    -s, --seconds         draw seconds hand\n");
-	printf ("    -d, --date            draw data-display\n");
-	printf ("    -l, --list            list installed themes and exit\n");
-	printf ("    -t, --theme NAME      theme to draw the clock with\n");
-	printf ("    -o, --ontop           clock-window stays on top of all windows\n");
-	printf ("    -p, --pager           clock-window shows up in pager\n");
-	printf ("    -b, --taskbar         clock-window shows up in taskbar\n");
-	printf ("    -i, --sticky          clock-window sticks to all workspaces\n");
-	printf ("    -e, --twelve          hands work in 12 hour mode\n");
-	printf ("    -f, --twentyfour      hands work in 24 hour mode\n");
-	printf ("    -r, --refresh RATE    use RATE Hz for animation, possible values [1..60]\n");
-	printf ("    -h, --help            print this usage-description and exit\n");
-	printf ("    -v, --version         print version of program and exit\n");
-}
-
 int
 main (int    argc,
       char** argv)
@@ -1333,29 +1318,120 @@ main (int    argc,
 	ThemeEntry*	     pThemeEntry		 = NULL;
 	gchar*		     pcFilename			 = NULL;
 	GError*		     pError			 = NULL;
-	gint		     iCurrentOption		 = 0;
-	gint		     iOptionIndex		 = 0;
-	gint		     iTmp;
-	static struct option aOptions[] = {
-		{"xposition",	1, NULL, 'x'},
-		{"yposition",	1, NULL, 'y'},
-		{"width",	1, NULL, 'w'},
-		{"height",	1, NULL, 'g'},
-		{"seconds",	0, NULL, 's'},
-		{"date",	0, NULL, 'd'},
-		{"list",	0, NULL, 'l'},
-		{"theme",	1, NULL, 't'},
-		{"ontop",	0, NULL, 'o'},
-		{"pager",	0, NULL, 'p'},
-		{"taskbar",	0, NULL, 'b'},
-		{"sticky",	0, NULL, 'i'},
-		{"twelve",	0, NULL, 'e'},
-		{"twentyfour",	0, NULL, 'f'},
-		{"refresh",	1, NULL, 'r'},
-		{"help",	0, NULL, 'h'},
-		{"version",	0, NULL, 'v'},
-		{0,0,0,0}
-	};
+	GOptionContext*	     pOptionContext		 = NULL;
+	GOptionEntry	     aOptions[]	= {{"xposition",
+					    'x',
+					    0,
+					    G_OPTION_ARG_INT,
+					    &g_iDefaultX,
+					    "x-position of the top-left window-corner",
+					    "X"},
+					   {"yposition",
+					    'y',
+					    0,
+					    G_OPTION_ARG_INT,
+					    &g_iDefaultY,
+					    "y-position of the top-left window-corner",
+					    "Y"},
+					   {"width",
+					    'w',
+					    0,
+					    G_OPTION_ARG_INT,
+					    &g_iDefaultWidth,
+					    "open window with this width",
+					    "WIDTH"},
+					   {"height",
+					    'g',
+					    0,
+					    G_OPTION_ARG_INT,
+					    &g_iDefaultHeight,
+					    "open window with this height",
+					    "HEIGHT"},
+					   {"seconds",
+					    's',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &g_iShowSeconds,
+					    "draw seconds hand",
+					    NULL},
+					   {"date",
+					    'd',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &g_iShowDate,
+					    "draw data-display",
+					    NULL},
+					   {"list",
+					    'l',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &bPrintThemeList,
+					    "list installed themes and exit",
+					    NULL},
+					   {"theme",
+					    't',
+					    0,
+					    G_OPTION_ARG_STRING,
+					    &g_pcTheme,
+					    "theme to draw the clock with",
+					    "NAME"},
+					   {"ontop",
+					    'o',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &g_iKeepOnTop,
+					    "clock-window stays on top of all windows",
+					    NULL},
+					   {"pager",
+					    'p',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &g_iAppearInPager,
+					    "clock-window shows up in pager",
+					    NULL},
+					   {"taskbar",
+					    'b',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &g_iAppearInTaskbar,
+					    "clock-window shows up in taskbar",
+					    NULL},
+					   {"sticky",
+					    'i',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &g_iSticky,
+					    "clock-window sticks to all workspaces",
+					    NULL},
+					   {"twelve",
+					    'e',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &g_i12,
+					    "hands work in 12 hour mode",
+					    NULL},
+					   {"twentyfour",
+					    'f',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &g_i24,
+					    "hands work in 24 hour mode",
+					    NULL},
+					   {"refresh",
+					    'r',
+					    0,
+					    G_OPTION_ARG_INT,
+					    &g_iRefreshRate,
+					    "render at RATE (default: 30 Hz)",
+					    "RATE"},
+					   {"version",
+					    'v',
+					    0,
+					    G_OPTION_ARG_NONE,
+					    &bPrintVersion,
+					    "print version of program and exit",
+					    NULL},
+					   {NULL}};
 
 	/* read in names of all installed themes */
 	pcFilename = get_user_theme_path ();
@@ -1364,114 +1440,41 @@ main (int    argc,
 	if (pcFilename)
 		free (pcFilename);
 
-	bzero (g_acTheme, 80);
-	strcpy (g_acTheme, "default");
-
 	gtk_init (&argc, &argv);
 
-	/* options set on the commandline overrule any previous stored
-	** settings */
 	if (argc > 1)
 	{
-		while ((iCurrentOption = getopt_long (argc,
-						      argv,
-						      "x:y:w:g:sdlt:opbiefr:hv",
-						      aOptions,
-						      &iOptionIndex)) != -1)
-		{
-			switch (iCurrentOption)
-			{
-				case 'x':
-					iTmp = atoi (optarg);
-					if (iTmp >= 0 &&
-					    iTmp <= gdk_screen_get_width (gdk_screen_get_default ()))
-						g_iDefaultX = iTmp;
-				break;
+		/* setup and process command-line options */
+		pOptionContext = g_option_context_new ("- analog clock drawn with vector-graphics");
+		g_option_context_add_main_entries (pOptionContext,
+						   aOptions,
+						   "cairo-clock");
+		g_option_context_parse (pOptionContext, &argc, &argv, NULL);
+		g_option_context_free (pOptionContext);
 
-				case 'y':
-					iTmp = atoi (optarg);
-					if (iTmp >= 0 &&
-					    iTmp <= gdk_screen_get_height (gdk_screen_get_default ()))
-						g_iDefaultY = iTmp;
-				break;
+		if (g_pcTheme)
+			strcpy (g_acTheme, g_pcTheme);
 
-				case 'w':
-					iTmp = atoi (optarg);
-					if (iTmp >= MIN_WIDTH &&
-					    iTmp <= MAX_WIDTH)
-						g_iDefaultWidth = iTmp;
-				break;
+		if (g_iDefaultX <= 0 ||
+		    g_iDefaultX >= gdk_screen_get_width (gdk_screen_get_default ()))
+			g_iDefaultX = 0;
 
-				case 'g':
-					iTmp = atoi (optarg);
-					if (iTmp >= MIN_HEIGHT &&
-					    iTmp <= MAX_HEIGHT)
-						g_iDefaultHeight = iTmp;
-				break;
+		if (g_iDefaultY <= 0 ||
+		    g_iDefaultY >= gdk_screen_get_height (gdk_screen_get_default ()))
+			g_iDefaultY = 0;
 
-				case 's':
-					g_iShowSeconds = 1;
-				break;
+		if (g_iDefaultWidth <= MIN_WIDTH ||
+		    g_iDefaultWidth >= MAX_WIDTH)
+			g_iDefaultWidth = 127;
 
-				case 'd':
-					g_iShowDate = 1;
-				break;
+		if (g_iDefaultHeight <= MIN_HEIGHT ||
+		    g_iDefaultHeight >= MAX_HEIGHT)
+			g_iDefaultHeight = 127;
 
-				case 'l':
-					print_theme_list ();
-					exit (0);
-				break;
-
-				case 't':
-					strcpy (g_acTheme, optarg);
-				break;
-
-				case 'o':
-					g_iKeepOnTop = 1;
-				break;
-
-				case 'p':
-					g_iAppearInPager = 1;
-				break;
-
-				case 'b':
-					g_iAppearInTaskbar = 1;
-				break;
-
-				case 'i':
-					g_iSticky = 1;
-				break;
-
-				case 'e':
-					g_i24 = 0;
-				break;
-                
-				case 'f':
-					g_i24 = 1;
-				break;
-
-				case 'r':
-					iTmp = atoi (optarg);
-					if (iTmp >= MIN_REFRESH_RATE &&
-					    iTmp <= MAX_REFRESH_RATE)
-						g_iRefreshRate = iTmp;
-				break;
-                
-				case 'h':
-					print_usage ();
-					exit (0);
-				break;
-
-				case 'v':
-					printf ("%s %s\n",
-						g_acAppName,
-						g_acAppVersion);
-					exit (0);
-				break;
-			}
-		}
+		if (g_iRefreshRate <= MIN_REFRESH_RATE ||
+		    g_iRefreshRate >= MAX_REFRESH_RATE)
+			g_iRefreshRate = 30;
 	}
-	/* just read the previously stored settings */
 	else
 	{
 		pcFilename = get_preferences_filename ();
@@ -1494,6 +1497,18 @@ main (int    argc,
 			free (pcFilename);
 	}
 
+	if (bPrintVersion)
+	{
+		printf ("%s %s\n", g_acAppName, g_acAppVersion);
+		exit (0);
+	}
+
+	if (bPrintThemeList)
+	{
+		print_theme_list ();
+		exit (0);
+	}
+
 	rsvg_init ();
 	pGladeXml = glade_xml_new (get_glade_filename (), NULL, NULL);
 	if (!pGladeXml)
@@ -1504,10 +1519,15 @@ main (int    argc,
 
 	g_pMainWindow = glade_xml_get_widget (pGladeXml,
 					      "mainWindow");
+	g_pErrorDialog = glade_xml_get_widget (pGladeXml,
+					      "errorDialog");
 
 	if (!gdk_screen_is_composited (gtk_widget_get_screen (g_pMainWindow)))
 	{
-		printf ("You are not running under a composited desktop!\n");
+		gtk_window_set_icon_from_file (GTK_WINDOW (g_pErrorDialog),
+					       get_icon_filename (),
+					       NULL);
+		gtk_dialog_run (GTK_DIALOG (g_pErrorDialog));
 		exit (2);
 	}
 
@@ -1684,13 +1704,9 @@ main (int    argc,
 			  "activate",
 			  G_CALLBACK (on_quit_activate),
 			  NULL);
-	g_signal_connect (G_OBJECT (g_pSettingsDialog),
-			  "delete-event",
-			  G_CALLBACK (gtk_widget_hide_on_delete),
-			  NULL);
 	g_signal_connect (G_OBJECT (g_pInfoDialog),
-			  "delete-event",
-			  G_CALLBACK (gtk_widget_hide_on_delete),
+			  "response",
+			  G_CALLBACK (on_info_close),
 			  NULL);
 	g_signal_connect (G_OBJECT (g_pComboBoxStartupSize),
 			  "changed",
@@ -1797,7 +1813,7 @@ main (int    argc,
 			     g_iSticky,
 			     g_i24,
 			     g_iRefreshRate))
-		printf ("Ups, there was an error while trying to save the preferences!\n");
+		printf ("Ups, error while trying to save the preferences!\n");
 
 	if (pcFilename)
 		free (pcFilename);
