@@ -12,7 +12,7 @@
 **    10.1.2006 (or so)
 **
 ** last change:
-**    14.8.2007
+**    17.8.2007
 **
 ** notes:
 **    In my ongoing efforts to do something useful while learning the cairo-API
@@ -406,6 +406,10 @@ render (gint iWidth,
 	static double		    fCurrentTimeStamp = 0.0f;
 	static double		    fLastTimeStamp    = 0.0f;
 	static double		    fAngleSecond      = 0.0f;
+	static double		    fAngleMinute      = 0.0f;
+	static double		    fAngleHour        = 0.0f;
+	static gboolean		    bAnimateMinute    = FALSE;
+	static double		    fDateAlpha	      = 0.0f;
 
 	fFactor = powf ((float) iFrames /
 			(float) g_iRefreshRate *
@@ -427,8 +431,21 @@ render (gint iWidth,
 	g_iMinutes = g_pTime->tm_min;
 	g_iHours = g_pTime->tm_hour;
 
+	if (!bAnimateMinute)
+		fAngleMinute = (double) g_iMinutes * 6.0f;
+
 	if (!g_i24)
+	{
 		g_iHours = g_iHours >= 12 ? g_iHours - 12 : g_iHours;
+		fAngleHour = (g_iSeconds + 60 * g_iMinutes + 3600 * (g_iHours % 12)) *
+			      360.0 /
+			      43200.0f;
+
+	}
+	else
+		fAngleHour = (g_iSeconds + 60 * g_iMinutes + 3600 * g_iHours) *
+			      360.0 /
+			      86400.0f;
 
 	g_iDay = g_pTime->tm_mday;
 	g_iMonth = g_pTime->tm_mon + 1;
@@ -467,8 +484,7 @@ render (gint iWidth,
 
 	cairo_save (g_pMainContext);
 	cairo_translate (g_pMainContext, fShadowOffsetX, fShadowOffsetY);
-	cairo_rotate (g_pMainContext,
-		      (M_PI/ (g_i24 ? 12.0f : 6.0f)) * g_iHours + (M_PI/(g_i24 ? 720.0f : 360.0f)) * g_iMinutes);
+	cairo_rotate (g_pMainContext, G_PI / 180.0f * fAngleHour);
 
 	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_HOUR_HAND_SHADOW],
 				  g_pMainContext);
@@ -477,7 +493,19 @@ render (gint iWidth,
 
 	cairo_save (g_pMainContext);
 	cairo_translate (g_pMainContext, fShadowOffsetX, fShadowOffsetY);
-	cairo_rotate (g_pMainContext, (M_PI/30.0f) * g_iMinutes);
+
+	if (bAnimateMinute)
+	{
+		cairo_rotate (g_pMainContext,
+			      G_PI / 180.0f * (fAngleMinute + fFactor * 6.0f));
+		if (fFactor >= 0.95f)
+		{
+			bAnimateMinute = FALSE;
+			fAngleMinute = (double) g_iMinutes * 6.0f;
+		}
+	}
+	else
+		cairo_rotate (g_pMainContext, G_PI / 180.0f * fAngleMinute);
 
 	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_MINUTE_HAND_SHADOW],
 				  g_pMainContext);
@@ -499,8 +527,7 @@ render (gint iWidth,
 	}
 
 	cairo_save (g_pMainContext);
-	cairo_rotate (g_pMainContext,
-	              (M_PI/ (g_i24 ? 12.0f : 6.0f)) * g_iHours + (M_PI/(g_i24 ? 720.0f : 360.0f)) * g_iMinutes);
+	cairo_rotate (g_pMainContext, G_PI / 180.0f * fAngleHour);
 
 	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_HOUR_HAND],
 				  g_pMainContext);
@@ -508,7 +535,19 @@ render (gint iWidth,
 	cairo_restore (g_pMainContext);
 
 	cairo_save (g_pMainContext);
-	cairo_rotate (g_pMainContext, (M_PI/30.0f) * g_iMinutes);
+
+	if (bAnimateMinute)
+	{
+		cairo_rotate (g_pMainContext,
+			      G_PI / 180.0f * (fAngleMinute + fFactor * 6.0f));
+		if (fFactor >= 0.95f)
+		{
+			bAnimateMinute = FALSE;
+			fAngleMinute = (double) g_iMinutes * 6.0f;
+		}
+	}
+	else
+		cairo_rotate (g_pMainContext, G_PI / 180.0f * fAngleMinute);
 
 	rsvg_handle_render_cairo (g_pSvgHandles[CLOCK_MINUTE_HAND],
 				  g_pMainContext);
@@ -553,6 +592,15 @@ render (gint iWidth,
 
 		if (fAngleSecond == 360.0f)
 			fAngleSecond = 0.0f;
+
+		if (fAngleSecond == 354.0f)
+			bAnimateMinute = TRUE;
+
+		if (fAngleSecond == 360.0f)
+			fAngleSecond = 0.0f;
+
+		if (fAngleMinute == 360.0f)
+			fAngleMinute = 0.0f;
 	}
 	fLastTimeStamp = fCurrentTimeStamp;
 }
