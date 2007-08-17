@@ -34,11 +34,11 @@ msgstr "<b>Darstellungsoptionen</b>"
 
 #: ../glade/cairo-clock.glade.h:4
 msgid "<b>St_artup Size</b>"
-msgstr "<b>_Startgröße</b>"
+msgstr "<b>St_artgröße</b>"
 
 #: ../glade/cairo-clock.glade.h:5
 msgid "<b>_Theme</b>"
-msgstr "<b>_Motiv</b>"
+msgstr "<b>Mo_tiv</b>"
 
 #: ../glade/cairo-clock.glade.h:6
 msgid "Appear in _pager"
@@ -46,11 +46,11 @@ msgstr "Im _Pager erscheinen"
 
 #: ../glade/cairo-clock.glade.h:7
 msgid "Appear in task_bar"
-msgstr "Im _Taskbar erscheinen"
+msgstr "Im Task_bar erscheinen"
 
 #: ../glade/cairo-clock.glade.h:285
 msgid "H_eight:"
-msgstr "_Höhe"
+msgstr "Höh_e"
 
 #: ../glade/cairo-clock.glade.h:286
 msgid "Info"
@@ -58,7 +58,7 @@ msgstr "Informationen"
 
 #: ../glade/cairo-clock.glade.h:287
 msgid "Keep _on top"
-msgstr "_Immer über allen anderen Fenstern bleiben"
+msgstr "Immer über allen anderen Fenstern bleiben"
 
 #: ../glade/cairo-clock.glade.h:289
 msgid "MacSlow's Cairo-Clock - Error"
@@ -90,15 +90,15 @@ msgstr "_Sekundenzeiger anzeigen"
 
 #: ../glade/cairo-clock.glade.h:296
 msgid "Stic_k to every workspace"
-msgstr "Auf _jedem Arbeitsplatz erscheinen"
+msgstr "Auf jedem Arbeitsplatz erscheinen"
 
 #: ../glade/cairo-clock.glade.h:297
 msgid "_Use 24h mode"
-msgstr "2_4-Stunden Modus verwenden"
+msgstr "24-St_unden Modus verwenden"
 
 #: ../glade/cairo-clock.glade.h:298
 msgid "_Width:"
-msgstr "_Breite:"
+msgstr "Breite:"
 
 #: ../glade/cairo-clock.glade.h:299
 msgid "an analog clock based on vector-graphics"
@@ -166,8 +166,9 @@ msgstr "fein"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../glade/cairo-clock.glade.h:317
+#, c-format
 msgid "translator-credits"
-msgstr "Mirco Müller"
+msgstr "de, en:\nMirco \"MacSlow\" Müller\n<macslow@bangang.de>"
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."
