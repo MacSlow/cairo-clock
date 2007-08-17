@@ -1,15 +1,24 @@
-dnl Process this file with autoconf to produce a configure script.
+AC_PREREQ([2.57])
 
-AC_INIT([cairo-clock], [0.3.3])
-AC_PREREQ([2.5])
+m4_define(cairo_clock_version_major, 0)
+m4_define(cairo_clock_version_minor, 3)
+m4_define(cairo_clock_version_micro, 3)
 
-AC_CANONICAL_BUILD
-AC_CANONICAL_HOST
-AC_CANONICAL_TARGET
+AC_INIT([cairo-clock],
+	[cairo_clock_version_major().cairo_clock_version_minor().cairo_clock_version_micro()],
+	[macslow@bangang.de])
 
-AM_INIT_AUTOMAKE([1.8])
+CAIRO_CLOCK_VERSION_MAJOR=cairo_clock_version_major()
+CAIRO_CLOCK_VERSION_MINOR=cairo_clock_version_minor()
+CAIRO_CLOCK_VERSION_MICRO=cairo_clock_version_micro()
+AC_SUBST(CAIRO_CLOCK_VERSION_MAJOR)
+AC_SUBST(CAIRO_CLOCK_VERSION_MINOR)
+AC_SUBST(CAIRO_CLOCK_VERSION_MICRO)
 
-AC_CONFIG_HEADERS([config.h])
+AM_INIT_AUTOMAKE([1.9])
+AC_CONFIG_HEADER([config.h])
+AC_PROG_INTLTOOL([0.23])
+AM_MAINTAINER_MODE
 
 dnl Check for C compiler
 AC_LANG([C])
@@ -54,6 +63,17 @@ AC_DISABLE_STATIC
 AC_ENABLE_SHARED
 AC_PROG_LIBTOOL
 
+dnl intltool
+ALL_LINGUAS="de"
+AC_SUBST(ALL_LINGUAS)
+AM_GLIB_GNU_GETTEXT
+GETTEXT_PACKAGE=cairo-clock
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
+AC_SUBST(GETTEXT_PACKAGE)
+
+cairoclocklocaledir='${prefix}/${DATADIRNAME}/locale'
+AC_SUBST(cairoclocklocaledir)
+
 dnl pkg-config
 PKG_PROG_PKG_CONFIG
 
@@ -65,11 +85,11 @@ PKG_CHECK_MODULES([GTK], [gtk+-2.0 >= 2.10.0])
 
 dnl GTK Deps+Libglade
 PKG_CHECK_MODULES([GTK_DEP],
-	[cairo >= 1.0.0
+	[cairo >= 1.2.0
          pango >= 1.10.0
 	 pangocairo >= 1.10.0
-	 libglade-2.0 >= 2.5.1
-	 librsvg-2.0 >= 2.13.91])
+	 libglade-2.0 >= 2.6.0
+	 librsvg-2.0 >= 2.14.0])
 
 dnl CLOCK defines
 CLOCK_DEFINES='-DDATA_DIR="\"$(datadir)\"" -DPKGDATA_DIR="\"$(pkgdatadir)\""'
@@ -86,6 +106,7 @@ AC_CONFIG_FILES([
     glade/Makefile
     src/Makefile
     man/Makefile
+    po/Makefile.in
     themes/Makefile
     themes/fdo/Makefile
     themes/simple/Makefile

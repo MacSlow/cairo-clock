@@ -31,7 +31,9 @@
 **    Truchan <moppsy@comcast.net>
 **
 *******************************************************************************/
- 
+
+#include "config.h"
+
 #include <time.h>
 #include <math.h>
 #include <string.h>
@@ -50,9 +52,6 @@
 #include <X11/extensions/shape.h>
 #include <gdk/gdkx.h>
 #endif
-
-#define GETTEXT_PACKAGE "cairo-clock"
-#define LOCALEDIR "mo"
 
 #define SECOND_INTERVAL	 1000
 #define MINUTE_INTERVAL	60000
@@ -827,9 +826,9 @@ write_settings (gchar* pcFilePath,
 		return FALSE;
 
 	fprintf (fileHandle,
-		 "%s %s %s\n", "# This file is machine-generated.",
-		 "Do not edit it manually!",
-		 "I really mean it!!!");
+		 "%s %s %s\n", _("# This file is machine-generated."),
+		 _("Do not edit it manually!"),
+		 _("I really mean it!!!"));
 	fprintf (fileHandle, "x=%d\n", iX);
 	fprintf (fileHandle, "y=%d\n", iY);
 	fprintf (fileHandle, "width=%d\n", iWidth);
@@ -872,7 +871,7 @@ on_close_clicked (GtkButton* pButton,
 			     g_iSticky,
 			     g_i24,
 			     g_iRefreshRate))
-		printf ("Ups, there was an error while trying to save the preferences!\n");
+		printf (_("Ups, there was an error while trying to save the preferences!\n"));
 
 	if (pcFilename)
 		free (pcFilename);
@@ -1327,116 +1326,116 @@ main (int    argc,
 					    0,
 					    G_OPTION_ARG_INT,
 					    &g_iDefaultX,
-					    "x-position of the top-left window-corner",
+					    _("x-position of the top-left window-corner"),
 					    "X"},
 					   {"yposition",
 					    'y',
 					    0,
 					    G_OPTION_ARG_INT,
 					    &g_iDefaultY,
-					    "y-position of the top-left window-corner",
+					    _("y-position of the top-left window-corner"),
 					    "Y"},
 					   {"width",
 					    'w',
 					    0,
 					    G_OPTION_ARG_INT,
 					    &g_iDefaultWidth,
-					    "open window with this width",
+					    _("open window with this width"),
 					    "WIDTH"},
 					   {"height",
 					    'h',
 					    0,
 					    G_OPTION_ARG_INT,
 					    &g_iDefaultHeight,
-					    "open window with this height",
+					    _("open window with this height"),
 					    "HEIGHT"},
 					   {"seconds",
 					    's',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &g_iShowSeconds,
-					    "draw seconds hand",
+					    _("draw seconds hand"),
 					    NULL},
 					   {"date",
 					    'd',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &g_iShowDate,
-					    "draw data-display",
+					    _("draw date-display"),
 					    NULL},
 					   {"list",
 					    'l',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &bPrintThemeList,
-					    "list installed themes and exit",
+					    _("list installed themes and exit"),
 					    NULL},
 					   {"theme",
 					    't',
 					    0,
 					    G_OPTION_ARG_STRING,
 					    &g_pcTheme,
-					    "theme to draw the clock with",
+					    _("theme to draw the clock with"),
 					    "NAME"},
 					   {"ontop",
 					    'o',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &g_iKeepOnTop,
-					    "clock-window stays on top of all windows",
+					    _("clock-window stays on top of all windows"),
 					    NULL},
 					   {"pager",
 					    'p',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &g_iAppearInPager,
-					    "clock-window shows up in pager",
+					    _("clock-window shows up in pager"),
 					    NULL},
 					   {"taskbar",
 					    'b',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &g_iAppearInTaskbar,
-					    "clock-window shows up in taskbar",
+					    _("clock-window shows up in taskbar"),
 					    NULL},
 					   {"sticky",
 					    'i',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &g_iSticky,
-					    "clock-window sticks to all workspaces",
+					    _("clock-window sticks to all workspaces"),
 					    NULL},
 					   {"twelve",
 					    'e',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &g_i12,
-					    "hands work in 12 hour mode",
+					    _("hands work in 12 hour mode"),
 					    NULL},
 					   {"twentyfour",
 					    'f',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &g_i24,
-					    "hands work in 24 hour mode",
+					    _("hands work in 24 hour mode"),
 					    NULL},
 					   {"refresh",
 					    'r',
 					    0,
 					    G_OPTION_ARG_INT,
 					    &g_iRefreshRate,
-					    "render at RATE (default: 30 Hz)",
+					    _("render at RATE (default: 30 Hz)"),
 					    "RATE"},
 					   {"version",
 					    'v',
 					    0,
 					    G_OPTION_ARG_NONE,
 					    &bPrintVersion,
-					    "print version of program and exit",
+					    _("print version of program and exit"),
 					    NULL},
 					   {NULL}};
 
-	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, CAIROCLOCKLOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
@@ -1452,7 +1451,7 @@ main (int    argc,
 	if (argc > 1)
 	{
 		/* setup and process command-line options */
-		pOptionContext = g_option_context_new ("- analog clock drawn with vector-graphics");
+		pOptionContext = g_option_context_new (_("- analog clock drawn with vector-graphics"));
 		g_option_context_add_main_entries (pOptionContext,
 						   aOptions,
 						   "cairo-clock");
@@ -1520,7 +1519,7 @@ main (int    argc,
 	pGladeXml = glade_xml_new (get_glade_filename (), NULL, NULL);
 	if (!pGladeXml)
 	{
-		printf ("Could not load \"%s\"!\n", get_glade_filename ());
+		printf (_("Could not load \"%s\"!\n"), get_glade_filename ());
 		exit (1);
 	}
 
@@ -1635,7 +1634,7 @@ main (int    argc,
 				       get_icon_filename (),
 				       NULL);
 	gtk_window_set_title (GTK_WINDOW (g_pMainWindow),
-			      "MacSlow's Cairo-Clock");
+			      _("MacSlow's Cairo-Clock"));
 	gtk_window_set_default_size (GTK_WINDOW (g_pMainWindow),
 				     g_iDefaultWidth,
 				     g_iDefaultHeight);
@@ -1820,7 +1819,7 @@ main (int    argc,
 			     g_iSticky,
 			     g_i24,
 			     g_iRefreshRate))
-		printf ("Ups, error while trying to save the preferences!\n");
+		printf (_("Ups, error while trying to save the preferences!\n"));
 
 	if (pcFilename)
 		free (pcFilename);
