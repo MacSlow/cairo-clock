@@ -64,7 +64,7 @@ AC_ENABLE_SHARED
 AC_PROG_LIBTOOL
 
 dnl intltool
-ALL_LINGUAS="de es fi fr it nl pl sv"
+ALL_LINGUAS="da de es fi fr it nl pl pt_PT ru sl sv tr zh_CN zh_TW"
 AC_SUBST(ALL_LINGUAS)
 AM_GLIB_GNU_GETTEXT
 GETTEXT_PACKAGE=cairo-clock

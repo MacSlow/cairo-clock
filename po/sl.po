@@ -1,0 +1,271 @@
+# translation of sl_SI.po to Slovenian
+# Matej Urbas <matej.urbas@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: sl_SI\n"
+"Report-Msgid-Bugs-To: Mirco Müller <macslow@bangang.de>\n"
+"POT-Creation-Date: 2007-08-17 06:19+0100\n"
+"PO-Revision-Date: 2007-08-17 15:58+0200\n"
+"Last-Translator: Matej Urbas <matej.urbas@gmail.com>\n"
+"Language-Team: Slovenian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../desktop/cairo-clock.desktop.in.h:1 ../glade/cairo-clock.glade.h:288
+#: ../src/cairo-clock.c:1638
+msgid "MacSlow's Cairo-Clock"
+msgstr "MacSlow Cairo Ura"
+
+#: ../desktop/cairo-clock.desktop.in.h:2
+msgid "a super fine analog clock"
+msgstr "popolnoma Kekčeva analogna ura"
+
+#: ../glade/cairo-clock.glade.h:1
+msgid "(C) 2006 - 2007 Mirco \"MacSlow\" Müller"
+msgstr "(C) 2006 - 2007 Mirco \"MacSlow\" Müller"
+
+#: ../glade/cairo-clock.glade.h:2
+msgid "<b>Animation Smoothness</b>"
+msgstr "<b>Gladkost animacij</b>"
+
+#: ../glade/cairo-clock.glade.h:3
+msgid "<b>Display Options</b>"
+msgstr "<b>Način Prikaza</b>"
+
+#: ../glade/cairo-clock.glade.h:4
+msgid "<b>St_artup Size</b>"
+msgstr "<b>Z_ačetna Velikost</b>"
+
+#: ../glade/cairo-clock.glade.h:5
+msgid "<b>_Theme</b>"
+msgstr "<b>Izgled</b>"
+
+#: ../glade/cairo-clock.glade.h:6
+msgid "Appear in _pager"
+msgstr "_Prikaži v Pagerju"
+
+#: ../glade/cairo-clock.glade.h:7
+msgid "Appear in task_bar"
+msgstr "Prikaži v _Opravilni Vrstici"
+
+#: ../glade/cairo-clock.glade.h:285
+msgid "H_eight:"
+msgstr "_Višina:"
+
+#: ../glade/cairo-clock.glade.h:286
+msgid "Info"
+msgstr "Informacije"
+
+#: ../glade/cairo-clock.glade.h:287
+msgid "Keep _on top"
+msgstr "Vedno na V_rhu"
+
+#: ../glade/cairo-clock.glade.h:289
+msgid "MacSlow's Cairo-Clock - Error"
+msgstr "MacSlow Cairo Ura - Napaka"
+
+#: ../glade/cairo-clock.glade.h:290
+msgid "MacSlow's Cairo-Clock - Information"
+msgstr "MacSlow Cairo Ura - Info"
+
+#: ../glade/cairo-clock.glade.h:291
+msgid "MacSlow's Cairo-Clock - Settings"
+msgstr "MacSlow Cairo Ura - Nastavitve"
+
+#: ../glade/cairo-clock.glade.h:292
+msgid "Properties"
+msgstr "Lastnosti"
+
+#: ../glade/cairo-clock.glade.h:293
+msgid "Quit"
+msgstr "Zaključi"
+
+#: ../glade/cairo-clock.glade.h:294
+msgid "Show _date"
+msgstr "Prikaži _Datum"
+
+#: ../glade/cairo-clock.glade.h:295
+msgid "Show _seconds"
+msgstr "Prikaži _Sekundne"
+
+#: ../glade/cairo-clock.glade.h:296
+msgid "Stic_k to every workspace"
+msgstr "Pri_kaži v Vseh Delovnih Površinah"
+
+#: ../glade/cairo-clock.glade.h:297
+msgid "_Use 24h mode"
+msgstr "_Uporabi 24-urni Način"
+
+#: ../glade/cairo-clock.glade.h:298
+msgid "_Width:"
+msgstr "Ši_rina:"
+
+#: ../glade/cairo-clock.glade.h:299
+msgid "an analog clock based on vector-graphics"
+msgstr "analogna ura, prikazana s pomočjo vektorske grafike"
+
+#: ../glade/cairo-clock.glade.h:300
+msgid "cairo-clock Homepage"
+msgstr "Domača Stran Cairo Ure"
+
+#: ../glade/cairo-clock.glade.h:301
+msgid "close this settings-dialog"
+msgstr "Zapri Nastavitveno Pogovorno Okence"
+
+#: ../glade/cairo-clock.glade.h:302
+msgid "get information on all settings-options"
+msgstr "pridobi informacije o vseh nastavitvah"
+
+#: ../glade/cairo-clock.glade.h:303
+msgid "if enabled the workspace pager will show the window of the clock"
+msgstr "če je omogočeno, bo pager delovne površine prikazal okno ure"
+
+#: ../glade/cairo-clock.glade.h:304
+msgid "if enabled, the clock window will be kept above all other windows"
+msgstr "če je omogočeno, bo okno ure prikazano nad vsemi ostalimi"
+
+#: ../glade/cairo-clock.glade.h:305
+msgid "if enabled, the current date will be displayed inside the clocks face"
+msgstr "če je omogočeno, bo datum prikazan v uri"
+
+#: ../glade/cairo-clock.glade.h:306
+msgid "if enabled, the seconds hand will be drawn"
+msgstr "če je omogočeno, bo sekundni kazalec viden"
+
+#: ../glade/cairo-clock.glade.h:307
+msgid "if enabled, the window of the clock will be shown in the taskbar"
+msgstr "če je omogočeno, bo ura prikazana v opravilni vrstici"
+
+#: ../glade/cairo-clock.glade.h:308
+msgid "initial window-height when program starts"
+msgstr "Višina Okna ob Zagonu"
+
+#: ../glade/cairo-clock.glade.h:309
+msgid "initial window-width when program starts"
+msgstr "Širina Okna ob Zagonu"
+
+#: ../glade/cairo-clock.glade.h:310
+msgid "rough"
+msgstr "grobo"
+
+#: ../glade/cairo-clock.glade.h:311
+msgid ""
+"small (50x50)\n"
+"medium (100x100)\n"
+"large (200x200)\n"
+"custom"
+msgstr ""
+"majhno (50x50)\n"
+"srednje (100x100)\n"
+"veliko (200x200)\n"
+"prilagojeno"
+
+#: ../glade/cairo-clock.glade.h:315
+msgid "smooth"
+msgstr "gladko"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../glade/cairo-clock.glade.h:317
+#, c-format
+msgid "translator-credits"
+msgstr "sl_SI:\nMatej Urbas\n<matej.urbas@gmail.com>"
+
+#: ../src/cairo-clock.c:830
+msgid "# This file is machine-generated."
+msgstr "# To datoteko je avtomatsko sestavil program"
+
+#: ../src/cairo-clock.c:831
+msgid "Do not edit it manually!"
+msgstr "Ne posodabljaj ročno!"
+
+#: ../src/cairo-clock.c:832
+msgid "I really mean it!!!"
+msgstr "Resno mislim, brez heca!!!"
+
+#: ../src/cairo-clock.c:875
+#, c-format
+msgid "Ups, there was an error while trying to save the preferences!\n"
+msgstr "Ups, napaka ob shranjevanju nastavitev!\n"
+
+#: ../src/cairo-clock.c:1330
+msgid "x-position of the top-left window-corner"
+msgstr "x-koordinata vrhnjega levega kota okna"
+
+#: ../src/cairo-clock.c:1337
+msgid "y-position of the top-left window-corner"
+msgstr "y-koordinata vrhnjega levega kota okna"
+
+#: ../src/cairo-clock.c:1344
+msgid "open window with this width"
+msgstr "odpri okno s to širino"
+
+#: ../src/cairo-clock.c:1351
+msgid "open window with this height"
+msgstr "odpri okno s to višino"
+
+#: ../src/cairo-clock.c:1358
+msgid "draw seconds hand"
+msgstr "prikaži kazalec sekund"
+
+#: ../src/cairo-clock.c:1365
+msgid "draw date-display"
+msgstr "prikaži datum"
+
+#: ../src/cairo-clock.c:1372
+msgid "list installed themes and exit"
+msgstr "naštej nameščene izglede in zaključi"
+
+#: ../src/cairo-clock.c:1379
+msgid "theme to draw the clock with"
+msgstr "izgled uporabljen za izris ure"
+
+#: ../src/cairo-clock.c:1386
+msgid "clock-window stays on top of all windows"
+msgstr "okno ure ostane na ostalimi"
+
+#: ../src/cairo-clock.c:1393
+msgid "clock-window shows up in pager"
+msgstr "okno ure je prikazano v pagerju"
+
+#: ../src/cairo-clock.c:1400
+msgid "clock-window shows up in taskbar"
+msgstr "okno ure je prikazano v opravilni vrstici"
+
+#: ../src/cairo-clock.c:1407
+msgid "clock-window sticks to all workspaces"
+msgstr "okno ure je prikazano v vseh delovnih površinah"
+
+#: ../src/cairo-clock.c:1414
+msgid "hands work in 12 hour mode"
+msgstr "kazalci delujejo v 12-urnem načinu"
+
+#: ../src/cairo-clock.c:1421
+msgid "hands work in 24 hour mode"
+msgstr "kazalci delujejo v 24-urnem načinu"
+
+#: ../src/cairo-clock.c:1428
+msgid "render at RATE (default: 30 Hz)"
+msgstr "izrisuj z RATE (Privzeto: 30 Hz)"
+
+#: ../src/cairo-clock.c:1435
+msgid "print version of program and exit"
+msgstr "izpiši različico programa in zaključi"
+
+#. setup and process command-line options
+#: ../src/cairo-clock.c:1455
+msgid "- analog clock drawn with vector-graphics"
+msgstr "- analogna ura, izrisana s pomočjo vektorske grafike"
+
+#: ../src/cairo-clock.c:1523
+#, c-format
+msgid "Could not load \"%s\"!\n"
+msgstr "Nalaganje \"%s\" ni uspelo!\n"
+
+#: ../src/cairo-clock.c:1823
+#, c-format
+msgid "Ups, error while trying to save the preferences!\n"
+msgstr "Ups, napaka ob shranjevanju nastavitev!\n"
+
