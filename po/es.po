@@ -1,0 +1,267 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cairo-clock\n"
+"Report-Msgid-Bugs-To: Mirco Müller <macslow@bangang.de>\n"
+"POT-Creation-Date: 2007-08-17 06:19+0100\n"
+"PO-Revision-Date: 2007-08-17 06:19+0100\n"
+"Last-Translator: Rafael Villar Burke <pachi@rvburke.com>\n"
+"Language-Team: Mirco Müller <macslow@bangang.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../desktop/cairo-clock.desktop.in.h:1 ../glade/cairo-clock.glade.h:288
+#: ../src/cairo-clock.c:1638
+msgid "MacSlow's Cairo-Clock"
+msgstr "Reloj Cairo de MacSlow"
+
+#: ../desktop/cairo-clock.desktop.in.h:2
+msgid "a super fine analog clock"
+msgstr "un super reloj analógico"
+
+#: ../glade/cairo-clock.glade.h:1
+msgid "(C) 2006 - 2007 Mirco \"MacSlow\" Müller"
+msgstr "(C) 2006 - 2007 Mirco \"MacSlow\" Müller"
+
+#: ../glade/cairo-clock.glade.h:2
+msgid "<b>Animation Smoothness</b>"
+msgstr "<b>Calidad de animación</b>"
+
+#: ../glade/cairo-clock.glade.h:3
+msgid "<b>Display Options</b>"
+msgstr "<b>Opciones de visualización</b>"
+
+#: ../glade/cairo-clock.glade.h:4
+msgid "<b>St_artup Size</b>"
+msgstr "<b>Tamaño inici_al</b>"
+
+#: ../glade/cairo-clock.glade.h:5
+msgid "<b>_Theme</b>"
+msgstr "<b>_Tema</b>"
+
+#: ../glade/cairo-clock.glade.h:6
+msgid "Appear in _pager"
+msgstr "Mostrar en el a_dministrador de escritorios"
+
+#: ../glade/cairo-clock.glade.h:7
+msgid "Appear in task_bar"
+msgstr "Mostrar en _barra de tareas"
+
+#: ../glade/cairo-clock.glade.h:285
+msgid "H_eight:"
+msgstr "A_ltura"
+
+#: ../glade/cairo-clock.glade.h:286
+msgid "Info"
+msgstr "Información"
+
+#: ../glade/cairo-clock.glade.h:287
+msgid "Keep _on top"
+msgstr "Siempre encima de _otras ventanas"
+
+#: ../glade/cairo-clock.glade.h:289
+msgid "MacSlow's Cairo-Clock - Error"
+msgstr "Reloj Cairo de MacSlow - Error"
+
+#: ../glade/cairo-clock.glade.h:290
+msgid "MacSlow's Cairo-Clock - Information"
+msgstr "Reloj Cairo de MacSlow - Información"
+
+#: ../glade/cairo-clock.glade.h:291
+msgid "MacSlow's Cairo-Clock - Settings"
+msgstr "Reloj Cairo de MacSlow - Ajustes"
+
+#: ../glade/cairo-clock.glade.h:292
+msgid "Properties"
+msgstr "Propiedades"
+
+#: ../glade/cairo-clock.glade.h:293
+msgid "Quit"
+msgstr "Salir"
+
+#: ../glade/cairo-clock.glade.h:294
+msgid "Show _date"
+msgstr "Mostrar _Fecha"
+
+#: ../glade/cairo-clock.glade.h:295
+msgid "Show _seconds"
+msgstr "Mostrar _segundos"
+
+#: ../glade/cairo-clock.glade.h:296
+msgid "Stic_k to every workspace"
+msgstr "Mostrar en todos los esc_ritorios"
+
+#: ../glade/cairo-clock.glade.h:297
+msgid "_Use 24h mode"
+msgstr "_Usar modo de 24h"
+
+#: ../glade/cairo-clock.glade.h:298
+msgid "_Width:"
+msgstr "A_ncho:"
+
+#: ../glade/cairo-clock.glade.h:299
+msgid "an analog clock based on vector-graphics"
+msgstr "reloj analógico realizado con gráficos vectoriales"
+
+#: ../glade/cairo-clock.glade.h:300
+msgid "cairo-clock Homepage"
+msgstr "Página web de cairo-clock"
+
+#: ../glade/cairo-clock.glade.h:301
+msgid "close this settings-dialog"
+msgstr "cerrar este diálogo de ajustes"
+
+#: ../glade/cairo-clock.glade.h:302
+msgid "get information on all settings-options"
+msgstr "obtener información de todos los ajustes y opciones"
+
+#: ../glade/cairo-clock.glade.h:303
+msgid "if enabled the workspace pager will show the window of the clock"
+msgstr "si se activa, el gestor de escritorios muestra la ventana del reloj"
+
+#: ../glade/cairo-clock.glade.h:304
+msgid "if enabled, the clock window will be kept above all other windows"
+msgstr "si se activa, la ventana del reloj se mostrará por encima de las demás ventanas"
+
+#: ../glade/cairo-clock.glade.h:305
+msgid "if enabled, the current date will be displayed inside the clocks face"
+msgstr "si se activa, la fecha actual se mostrará en el interior del reloj"
+
+#: ../glade/cairo-clock.glade.h:306
+msgid "if enabled, the seconds hand will be drawn"
+msgstr "si se activa, se muestra la manecilla de los segundos"
+
+#: ../glade/cairo-clock.glade.h:307
+msgid "if enabled, the window of the clock will be shown in the taskbar"
+msgstr "si se activa, la ventana del reloj aparece en la barra de tareas"
+
+#: ../glade/cairo-clock.glade.h:308
+msgid "initial window-height when program starts"
+msgstr "altura inicial de la ventana al arrancar el programa"
+
+#: ../glade/cairo-clock.glade.h:309
+msgid "initial window-width when program starts"
+msgstr "anchura inicial de la ventana al arrancar el programa"
+
+#: ../glade/cairo-clock.glade.h:310
+msgid "rough"
+msgstr "tosco"
+
+#: ../glade/cairo-clock.glade.h:311
+msgid ""
+"small (50x50)\n"
+"medium (100x100)\n"
+"large (200x200)\n"
+"custom"
+msgstr ""
+"pequeño (50x50)\n"
+"mediano (100x100)\n"
+"grande (200x200)\n"
+"personalizado"
+
+#: ../glade/cairo-clock.glade.h:315
+msgid "smooth"
+msgstr "suave"
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: ../glade/cairo-clock.glade.h:317
+#, c-format
+msgid "translator-credits"
+msgstr "es:\nRafael Villar Burke \"pachi\"\n<pachi@rvburke.com>"
+
+#: ../src/cairo-clock.c:830
+msgid "# This file is machine-generated."
+msgstr "# Este archivo se genera automáticamente."
+
+#: ../src/cairo-clock.c:831
+msgid "Do not edit it manually!"
+msgstr "¡No editar manualmente!"
+
+#: ../src/cairo-clock.c:832
+msgid "I really mean it!!!"
+msgstr "¡¡¡Queda avisado!!!"
+
+#: ../src/cairo-clock.c:875
+#, c-format
+msgid "Ups, there was an error while trying to save the preferences!\n"
+msgstr "¡Oh, se ha producido un error al intentar guardas las preferencias!\n"
+
+#: ../src/cairo-clock.c:1330
+msgid "x-position of the top-left window-corner"
+msgstr "posición x de la esquina superior izquierda de la ventana"
+
+#: ../src/cairo-clock.c:1337
+msgid "y-position of the top-left window-corner"
+msgstr "posición y de la esquina superior izquierda de la ventana"
+
+#: ../src/cairo-clock.c:1344
+msgid "open window with this width"
+msgstr "abrir ventana con este ancho"
+
+#: ../src/cairo-clock.c:1351
+msgid "open window with this height"
+msgstr "abrir ventana con esta altura"
+
+#: ../src/cairo-clock.c:1358
+msgid "draw seconds hand"
+msgstr "dibujar manecilla de los segundos"
+
+#: ../src/cairo-clock.c:1365
+msgid "draw date-display"
+msgstr "dibujar fecha"
+
+#: ../src/cairo-clock.c:1372
+msgid "list installed themes and exit"
+msgstr "mostrar temas instalados y salir"
+
+#: ../src/cairo-clock.c:1379
+msgid "theme to draw the clock with"
+msgstr "tema con el que mostrar el reloj"
+
+#: ../src/cairo-clock.c:1386
+msgid "clock-window stays on top of all windows"
+msgstr "la ventana del reloj permanece sobre las demás ventanas"
+
+#: ../src/cairo-clock.c:1393
+msgid "clock-window shows up in pager"
+msgstr "la ventana del reloj aparece en el gestor de escritorios"
+
+#: ../src/cairo-clock.c:1400
+msgid "clock-window shows up in taskbar"
+msgstr "la ventana del reloj aparece en la barra de tareas"
+
+#: ../src/cairo-clock.c:1407
+msgid "clock-window sticks to all workspaces"
+msgstr "la ventana del reloj aparece en todos los escritorios"
+
+#: ../src/cairo-clock.c:1414
+msgid "hands work in 12 hour mode"
+msgstr "las manecillas funcionan en modo de 12h"
+
+#: ../src/cairo-clock.c:1421
+msgid "hands work in 24 hour mode"
+msgstr "las manecillas funcionan en modo de 24h"
+
+#: ../src/cairo-clock.c:1428
+msgid "render at RATE (default: 30 Hz)"
+msgstr "Frecuencia de refresco (por defecto: 30 Hz)"
+
+#: ../src/cairo-clock.c:1435
+msgid "print version of program and exit"
+msgstr "mostrar versión del programa y salir"
+
+#. setup and process command-line options
+#: ../src/cairo-clock.c:1455
+msgid "- analog clock drawn with vector-graphics"
+msgstr "- reloj analógico dibujado con gráficos vectoriales"
+
+#: ../src/cairo-clock.c:1523
+#, c-format
+msgid "Could not load \"%s\"!\n"
+msgstr "¡No se pudo cargar \"%s\"!\n"
+
+#: ../src/cairo-clock.c:1823
+#, c-format
+msgid "Ups, error while trying to save the preferences!\n"
+msgstr "¡Oh, error al intentar guardar las preferencias!\n"
