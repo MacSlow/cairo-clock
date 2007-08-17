@@ -162,7 +162,7 @@ msgstr ""
 
 #: ../glade/cairo-clock.glade.h:315
 msgid "smooth"
-msgstr "weich"
+msgstr "fein"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../glade/cairo-clock.glade.h:317
