@@ -769,9 +769,7 @@ read_settings (gchar* pcFilePath,
 	       gint*  piRefreshRate)
 {
 	FILE* fileHandle = NULL;
-	gchar cCommentLine[80];
-	gint iResult;
-	gchar* pcResult;
+	gint iResult = 0;
 
 	if (!pcFilePath)
 		return FALSE;
@@ -780,7 +778,10 @@ read_settings (gchar* pcFilePath,
 	if (!fileHandle)
 		return FALSE;
 
-	pcResult = fgets (cCommentLine, 80, fileHandle);
+	/* skip comment-line */
+	while ((gchar)iResult != '\n')
+		iResult = fgetc (fileHandle);
+
 	iResult = fscanf (fileHandle, "x=%d\n", piX);
 	iResult = fscanf (fileHandle, "y=%d\n", piY);
 	iResult = fscanf (fileHandle, "width=%d\n", piWidth);
