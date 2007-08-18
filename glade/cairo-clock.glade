@@ -367,7 +367,10 @@ tango:
 Jannol &lt;jp@jannol.com&gt;
 
 default-24, ipulse, ipulse-24, quartz-24, radium-24, silvia, silvia-24, simple-24:
-Darryll "Moppsy" Truchan &lt;moppsy@comcast.net&gt;</property>
+Darryll "Moppsy" Truchan &lt;moppsy@comcast.net&gt;
+
+gremlin, gremlin-24:
+Christian "ChipX86" Hammond &lt;chipx86@chipx86.com&gt;</property>
   </widget>
   <widget class="GtkWindow" id="settingsDialog">
     <property name="width_request">300</property>
