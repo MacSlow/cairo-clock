@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128"
+   height="128"
+   id="svg1965"
+   sodipodi:version="0.32"
+   inkscape:version="0.44"
+   version="1.0"
+   sodipodi:docbase="/home/chipx86/.cairo-clock/themes/gremlin-24"
+   sodipodi:docname="clock-face.svg">
+  <defs
+     id="defs1967">
+    <linearGradient
+       id="linearGradient2854">
+      <stop
+         style="stop-color:#f2a3e4;stop-opacity:1;"
+         offset="0"
+         id="stop2856" />
+      <stop
+         style="stop-color:#ca67ba;stop-opacity:1;"
+         offset="1"
+         id="stop2858" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2904">
+      <stop
+         style="stop-color:black;stop-opacity:0.37113401;"
+         offset="0"
+         id="stop2906" />
+      <stop
+         style="stop-color:black;stop-opacity:0;"
+         offset="1"
+         id="stop2908" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2252"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.333755,1.333755,-0.707115,0.707098,134.8007,-62.51794)"
+       cx="99"
+       cy="237.36218"
+       fx="99"
+       fy="237.36218"
+       r="15" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2254"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.333755,1.333755,-0.707115,0.707098,134.8007,-62.51794)"
+       cx="99"
+       cy="237.36218"
+       fx="99"
+       fy="237.36218"
+       r="15" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2904"
+       id="linearGradient2399"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100.0405,-116.4001)"
+       x1="236.70399"
+       y1="141.9622"
+       x2="246.6035"
+       y2="146.36244" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2904"
+       id="linearGradient2402"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100.0405,-116.4001)"
+       x1="126.04179"
+       y1="150.62425"
+       x2="121.62237"
+       y2="156.10434" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2422"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.157254,0.945304,-0.770953,0.943877,19.42493,-248.4707)"
+       cx="149.75"
+       cy="185.34264"
+       fx="149.75"
+       fy="185.34264"
+       r="74.750893" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2430"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.025934,0.415923,-0.118752,0.567017,29.0926,70.7302)"
+       cx="127.28186"
+       cy="272.78467"
+       fx="127.28186"
+       fy="272.78467"
+       r="28.089767" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2432"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.728646,0.12023,-5.440971e-2,-0.638269,269.9831,432.2004)"
+       cx="147.65985"
+       cy="270.75046"
+       fx="147.65985"
+       fy="270.75046"
+       r="28.089767" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2438"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.333755,1.333755,-0.707115,0.707098,134.8007,-62.51794)"
+       cx="99"
+       cy="237.36218"
+       fx="99"
+       fy="237.36218"
+       r="15" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2440"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.333755,1.333755,-0.707115,0.707098,134.8007,-62.51794)"
+       cx="99"
+       cy="237.36218"
+       fx="99"
+       fy="237.36218"
+       r="15" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2481"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.333755,1.333755,-0.707115,0.707098,134.8007,-62.51794)"
+       cx="99"
+       cy="237.36218"
+       fx="99"
+       fy="237.36218"
+       r="15" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2483"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.333755,1.333755,-0.707115,0.707098,134.8007,-62.51794)"
+       cx="99"
+       cy="237.36218"
+       fx="99"
+       fy="237.36218"
+       r="15" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2485"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.025934,0.415923,-0.118752,0.567017,29.0926,70.7302)"
+       cx="127.28186"
+       cy="272.78467"
+       fx="127.28186"
+       fy="272.78467"
+       r="28.089767" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2487"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.728646,0.12023,-5.440971e-2,-0.638269,269.9831,432.2004)"
+       cx="147.65985"
+       cy="270.75046"
+       fx="147.65985"
+       fy="270.75046"
+       r="28.089767" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient2489"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.157254,0.945304,-0.770953,0.943877,19.42493,-248.4707)"
+       cx="149.75"
+       cy="185.34264"
+       fx="149.75"
+       fy="185.34264"
+       r="74.750893" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2904"
+       id="linearGradient2491"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100.0405,-116.4001)"
+       x1="126.04179"
+       y1="150.62425"
+       x2="121.62237"
+       y2="156.10434" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2904"
+       id="linearGradient2493"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100.0405,-116.4001)"
+       x1="236.70399"
+       y1="141.9622"
+       x2="246.6035"
+       y2="146.36244" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient4274"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.157254,0.945304,-0.770953,0.943877,19.42493,-248.4707)"
+       cx="149.75"
+       cy="185.34264"
+       fx="149.75"
+       fy="185.34264"
+       r="74.750893" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2904"
+       id="linearGradient4276"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100.0405,-116.4001)"
+       x1="126.04179"
+       y1="150.62425"
+       x2="121.62237"
+       y2="156.10434" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2904"
+       id="linearGradient4278"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-100.0405,-116.4001)"
+       x1="236.70399"
+       y1="141.9622"
+       x2="246.6035"
+       y2="146.36244" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient4280"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.333755,1.333755,-0.707115,0.707098,134.8007,-62.51794)"
+       cx="99"
+       cy="237.36218"
+       fx="99"
+       fy="237.36218"
+       r="15" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient4282"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.333755,1.333755,-0.707115,0.707098,134.8007,-62.51794)"
+       cx="99"
+       cy="237.36218"
+       fx="99"
+       fy="237.36218"
+       r="15" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient4284"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.025934,0.415923,-0.118752,0.567017,29.0926,70.7302)"
+       cx="127.28186"
+       cy="272.78467"
+       fx="127.28186"
+       fy="272.78467"
+       r="28.089767" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient4286"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.728646,0.12023,-5.440971e-2,-0.638269,269.9831,432.2004)"
+       cx="147.65985"
+       cy="270.75046"
+       fx="147.65985"
+       fy="270.75046"
+       r="28.089767" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2904"
+       id="linearGradient3666"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.506891,0,0,0.506891,-28.2746,-59.17513)"
+       x1="236.70399"
+       y1="141.9622"
+       x2="246.6035"
+       y2="146.36244" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2904"
+       id="linearGradient3669"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.506891,0,0,0.506891,-28.2746,-59.17513)"
+       x1="126.04179"
+       y1="150.62425"
+       x2="121.62237"
+       y2="156.10434" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2854"
+       id="radialGradient3685"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.586602,0.479166,-0.390789,0.478443,32.28135,-126.1205)"
+       cx="149.75"
+       cy="185.34264"
+       fx="149.75"
+       fy="185.34264"
+       r="74.750893" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="8"
+     inkscape:cx="75.099612"
+     inkscape:cy="65.064142"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     height="128px"
+     width="128px"
+     inkscape:window-width="914"
+     inkscape:window-height="622"
+     inkscape:window-x="325"
+     inkscape:window-y="505" />
+  <metadata
+     id="metadata1970">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ee8edd;fill-opacity:1;fill-rule:nonzero;stroke:black;stroke-width:0.80961192;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 97.71951,1.6834671 C 92.253107,1.4703092 84.148933,12.191201 78.283409,17.808937 C 70.006975,13.030536 55.825302,14.441402 49.992558,17.808937 C 39.392109,6.6143304 22.230589,5.7349556 24.315361,11.773766 C 26.891837,17.584815 33.017209,17.827134 34.073013,26.679529 L 34.199735,26.616168 C 30.857291,41.856125 25.336554,61.015275 33.312676,78.635855 C 37.708977,83.032157 91.655786,84.693857 95.153375,78.635855 C 102.54341,61.160469 97.30314,41.73989 94.171273,26.679529 C 94.172495,26.66927 94.170036,26.658113 94.171273,26.647849 C 95.23874,17.801029 101.85645,6.9345435 99.366906,2.142837 C 98.852138,1.8542995 98.299713,1.7060896 97.71951,1.6834671 z "
+       id="rect2804"
+       sodipodi:nodetypes="cccccccccscc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       id="path3072"
+       d="M 97.564351,1.8593227 C 92.121715,1.6470926 84.052776,12.321371 78.212753,17.91468 C 69.330357,14.366443 59.434189,14.873334 50.044905,17.91468 C 39.490542,6.7687446 22.40364,5.8931968 24.479345,11.90575 C 27.044619,17.691536 33.143359,17.932801 34.194575,26.746708 L 34.320746,26.68362 C 30.992834,41.857316 25.496098,60.933169 33.437544,78.477138 C 37.81473,82.854324 91.52699,84.508801 95.009372,78.477138 C 102.36727,61.077729 97.14979,41.741588 94.031539,26.746708 C 94.032755,26.736494 94.030307,26.725383 94.031539,26.715164 C 95.094367,17.906808 101.6833,7.0875689 99.204584,2.3166956 C 98.692052,2.02941 98.142029,1.8818439 97.564351,1.8593227 z "
+       style="fill:url(#radialGradient3685);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:nodetypes="cccccccccscc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:0.12637365;fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3086"
+       sodipodi:cx="35.355339"
+       sodipodi:cy="192.52034"
+       sodipodi:rx="2.8284271"
+       sodipodi:ry="4.9497476"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       transform="matrix(0.375101,0.340937,-0.340937,0.375101,96.78225,-60.13949)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       sodipodi:ry="4.9497476"
+       sodipodi:rx="2.8284271"
+       sodipodi:cy="192.52034"
+       sodipodi:cx="35.355339"
+       id="path3090"
+       style="opacity:0.12637365;fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       transform="matrix(0.481804,0.157492,-0.157492,0.481804,51.51934,-68.75831)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       sodipodi:ry="4.9497476"
+       sodipodi:rx="2.8284271"
+       sodipodi:cy="192.52034"
+       sodipodi:cx="35.355339"
+       id="path3094"
+       style="opacity:0.12637365;fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       transform="matrix(0.481804,0.157492,-0.157492,0.481804,48.1548,-61.87367)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.427738,0.271991,-0.271991,0.427738,81.57056,-61.62696)"
+       sodipodi:type="arc"
+       style="opacity:0.12637365;fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3096"
+       sodipodi:cx="35.355339"
+       sodipodi:cy="192.52034"
+       sodipodi:rx="2.8284271"
+       sodipodi:ry="4.9497476"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path2826"
+       sodipodi:cx="165.10944"
+       sodipodi:cy="180.14597"
+       sodipodi:rx="6.7175145"
+       sodipodi:ry="10.960155"
+       d="M 171.82695 180.14597 A 6.7175145 10.960155 0 1 1  158.39192,180.14597 A 6.7175145 10.960155 0 1 1  171.82695 180.14597 z"
+       transform="matrix(0.442143,0,0,0.442143,-17.43241,-52.57997)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="M 171.82695 180.14597 A 6.7175145 10.960155 0 1 1  158.39192,180.14597 A 6.7175145 10.960155 0 1 1  171.82695 180.14597 z"
+       sodipodi:ry="10.960155"
+       sodipodi:rx="6.7175145"
+       sodipodi:cy="180.14597"
+       sodipodi:cx="165.10944"
+       id="path2828"
+       style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       transform="matrix(0.115806,0,0,0.135446,35.28828,0.735987)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="M 171.82695 180.14597 A 6.7175145 10.960155 0 1 1  158.39192,180.14597 A 6.7175145 10.960155 0 1 1  171.82695 180.14597 z"
+       sodipodi:ry="10.960155"
+       sodipodi:rx="6.7175145"
+       sodipodi:cy="180.14597"
+       sodipodi:cx="165.10944"
+       id="path2830"
+       style="fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       transform="matrix(0.442143,0,0,0.442143,-1.515255,-52.57997)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.115806,0,0,0.135446,51.20542,0.735987)"
+       sodipodi:type="arc"
+       style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path2832"
+       sodipodi:cx="165.10944"
+       sodipodi:cy="180.14597"
+       sodipodi:rx="6.7175145"
+       sodipodi:ry="10.960155"
+       d="M 171.82695 180.14597 A 6.7175145 10.960155 0 1 1  158.39192,180.14597 A 6.7175145 10.960155 0 1 1  171.82695 180.14597 z"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:white;fill-opacity:1;fill-rule:nonzero;stroke:#454545;stroke-width:0.80961192;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 41.591539,45.010133 L 39.846542,41.931059 L 38.101539,38.896784 L 41.595797,38.656284 L 45.134854,38.998228 L 43.385599,41.959379 L 41.591539,45.010133 z "
+       id="path2838"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:white;fill-opacity:1;fill-rule:nonzero;stroke:#454545;stroke-width:0.80961186;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 86.444237,45.012982 L 88.260098,41.975153 L 90.075954,38.93732 L 86.58199,38.65964 L 83.088031,38.829991 L 84.72133,41.921488 L 86.444237,45.012982 z "
+       id="path2840"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.61922383;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 35.289566,39.345321 C 44.444565,36.687322 54.824598,42.003321 63.979602,39.345321 C 73.716757,42.172339 82.932471,36.518299 92.669634,39.345321"
+       id="path2836"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.80961192px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 25.962757,12.480083 C 31.749764,9.9878674 36.77643,18.140368 42.183269,20.970507"
+       id="path2895"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:0.80961192px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 98.955057,4.3698271 C 93.041327,9.7766662 88.141384,17.717955 88.817237,20.590339"
+       id="path2898"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:nodetypes="ccc"
+       id="path2902"
+       d="M 35.273908,24.603137 C 34.642844,19.339753 27.577007,16.063656 26.037027,12.608575 C 30.867627,10.493653 35.865303,16.092746 42.087365,20.852351"
+       style="opacity:0.67032967;fill:url(#linearGradient3669);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.9999997;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:url(#linearGradient3666);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.9999997;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 93.324111,25.248302 C 93.872056,20.643 100.27076,7.2767355 98.977234,4.7810425 C 94.962672,7.2121982 87.8579,18.350606 88.962416,20.600016"
+       id="path2912"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.481804,0.157492,-0.157492,0.481804,52.97026,-63.14089)"
+       sodipodi:type="arc"
+       style="opacity:0.12637365;fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3110"
+       sodipodi:cx="35.355339"
+       sodipodi:cy="192.52034"
+       sodipodi:rx="2.8284271"
+       sodipodi:ry="4.9497476"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       sodipodi:ry="4.9497476"
+       sodipodi:rx="2.8284271"
+       sodipodi:cy="192.52034"
+       sodipodi:cx="35.355339"
+       id="path3112"
+       style="opacity:0.12637365;fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       transform="matrix(0.481804,0.157492,-0.157492,0.481804,46.5074,-54.77719)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.375101,0.340937,-0.340937,0.375101,102.4848,-63.561)"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       sodipodi:ry="4.9497476"
+       sodipodi:rx="2.8284271"
+       sodipodi:cy="192.52034"
+       sodipodi:cx="35.355339"
+       id="path3114"
+       style="opacity:0.12637365;fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(-0.375101,0.340937,0.340937,0.375101,31.66781,-60.13949)"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       sodipodi:ry="4.9497476"
+       sodipodi:rx="2.8284271"
+       sodipodi:cy="192.52034"
+       sodipodi:cx="35.355339"
+       id="path3116"
+       style="opacity:0.06043958;fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(-0.481804,0.157492,0.157492,0.481804,76.93073,-68.75831)"
+       sodipodi:type="arc"
+       style="opacity:0.06043958;fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3118"
+       sodipodi:cx="35.355339"
+       sodipodi:cy="192.52034"
+       sodipodi:rx="2.8284271"
+       sodipodi:ry="4.9497476"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(-0.481804,0.157492,0.157492,0.481804,80.29527,-61.87367)"
+       sodipodi:type="arc"
+       style="opacity:0.06043958;fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3120"
+       sodipodi:cx="35.355339"
+       sodipodi:cy="192.52034"
+       sodipodi:rx="2.8284271"
+       sodipodi:ry="4.9497476"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       sodipodi:ry="4.9497476"
+       sodipodi:rx="2.8284271"
+       sodipodi:cy="192.52034"
+       sodipodi:cx="35.355339"
+       id="path3122"
+       style="opacity:0.06043958;fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       transform="matrix(-0.427738,0.271991,0.271991,0.427738,46.87951,-61.62696)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       sodipodi:ry="4.9497476"
+       sodipodi:rx="2.8284271"
+       sodipodi:cy="192.52034"
+       sodipodi:cx="35.355339"
+       id="path3124"
+       style="opacity:0.06043958;fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       transform="matrix(-0.481804,0.157492,0.157492,0.481804,75.4798,-63.14089)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(-0.481804,0.157492,0.157492,0.481804,81.94266,-54.77719)"
+       sodipodi:type="arc"
+       style="opacity:0.06043958;fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3126"
+       sodipodi:cx="35.355339"
+       sodipodi:cy="192.52034"
+       sodipodi:rx="2.8284271"
+       sodipodi:ry="4.9497476"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="opacity:0.06043958;fill:#2e3436;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path3128"
+       sodipodi:cx="35.355339"
+       sodipodi:cy="192.52034"
+       sodipodi:rx="2.8284271"
+       sodipodi:ry="4.9497476"
+       d="M 38.183766 192.52034 A 2.8284271 4.9497476 0 1 1  32.526912,192.52034 A 2.8284271 4.9497476 0 1 1  38.183766 192.52034 z"
+       transform="matrix(-0.375101,0.340937,0.340937,0.375101,25.96529,-63.561)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#de85cf;fill-opacity:1;fill-rule:nonzero;stroke:black;stroke-width:0.80961221;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 51.295694,18.047135 L 52.00707,15.637507 L 52.282159,13.140167 L 54.013278,14.961056 L 56.03849,16.44796"
+       id="path3156"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       id="path3159"
+       d="M 77.327909,18.047135 L 76.616533,15.637507 L 76.341443,13.140167 L 74.610324,14.961056 L 72.585114,16.44796"
+       style="fill:#de85cf;fill-opacity:1;fill-rule:nonzero;stroke:black;stroke-width:0.80961221;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.467732,0,0,0.467732,-2.885762,-34.86094)"
+       d="M 199 211.36218 A 56 56 0 1 1  87,211.36218 A 56 56 0 1 1  199 211.36218 z"
+       sodipodi:ry="56"
+       sodipodi:rx="56"
+       sodipodi:cy="211.36218"
+       sodipodi:cx="143"
+       id="path2990"
+       style="opacity:0.14835163;fill:black;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.95446259;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:white;fill-opacity:1;fill-rule:nonzero;stroke:#2b2b2b;stroke-width:1.57615542;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path2834"
+       sodipodi:cx="143"
+       sodipodi:cy="211.36218"
+       sodipodi:rx="56"
+       sodipodi:ry="56"
+       d="M 199 211.36218 A 56 56 0 1 1  87,211.36218 A 56 56 0 1 1  199 211.36218 z"
+       transform="matrix(0.452397,0,0,0.452397,-0.692787,-31.6196)"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:black;fill-opacity:0.03825139;fill-rule:nonzero;stroke:none;stroke-width:0.98681724;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 89.334156,63.719819 C 65.020097,77.799841 65.241192,52.112501 38.665731,63.719819 C 38.665731,77.704305 50.015457,89.054032 63.999943,89.054032 C 77.984425,89.054032 89.334156,77.704305 89.334156,63.719819 z "
+       id="path3165"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.420874,0,0,0.420874,3.814991,-24.95684)"
+       d="M 199 211.36218 A 56 56 0 1 1  87,211.36218 A 56 56 0 1 1  199 211.36218 z"
+       sodipodi:ry="56"
+       sodipodi:rx="56"
+       sodipodi:cy="211.36218"
+       sodipodi:cx="143"
+       id="path2988"
+       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#e2e2e2;stroke-width:1.69420755;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g2473"
+       transform="matrix(0.506891,0,0,0.506891,22.43503,0.333922)">
+      <g
+         id="g2434">
+        <path
+           sodipodi:type="arc"
+           style="fill:url(#radialGradient4280);fill-opacity:1;fill-rule:nonzero;stroke:#2b2b2b;stroke-width:1.59721112;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path2850"
+           sodipodi:cx="103.5"
+           sodipodi:cy="242.86218"
+           sodipodi:rx="14.5"
+           sodipodi:ry="14.5"
+           d="M 118 242.86218 A 14.5 14.5 0 1 1  89,242.86218 A 14.5 14.5 0 1 1  118 242.86218 z"
+           transform="translate(-80.04047,-124.4001)"
+           inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           transform="translate(37.95953,-124.4001)"
+           d="M 118 242.86218 A 14.5 14.5 0 1 1  89,242.86218 A 14.5 14.5 0 1 1  118 242.86218 z"
+           sodipodi:ry="14.5"
+           sodipodi:rx="14.5"
+           sodipodi:cy="242.86218"
+           sodipodi:cx="103.5"
+           id="path2862"
+           style="fill:url(#radialGradient4282);fill-opacity:1;fill-rule:nonzero;stroke:#2b2b2b;stroke-width:1.59721112;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           sodipodi:type="arc"
+           inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+      </g>
+      <g
+         id="g2426">
+        <path
+           sodipodi:type="arc"
+           style="fill:url(#radialGradient4284);fill-opacity:1;fill-rule:nonzero;stroke:#2b2b2b;stroke-width:1.8839674;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path2846"
+           sodipodi:cx="139.5"
+           sodipodi:cy="286.36218"
+           sodipodi:rx="27.5"
+           sodipodi:ry="16"
+           d="M 167 286.36218 A 27.5 16 0 1 1  112,286.36218 A 27.5 16 0 1 1  167 286.36218 z"
+           transform="matrix(0.971399,0.237453,-0.170669,0.698193,-53.17737,-69.59872)"
+           inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+        <path
+           transform="matrix(-0.971399,0.237453,0.170669,0.698193,216.0966,-69.59872)"
+           d="M 167 286.36218 A 27.5 16 0 1 1  112,286.36218 A 27.5 16 0 1 1  167 286.36218 z"
+           sodipodi:ry="16"
+           sodipodi:rx="27.5"
+           sodipodi:cy="286.36218"
+           sodipodi:cx="139.5"
+           id="path2848"
+           style="fill:url(#radialGradient4286);fill-opacity:1;fill-rule:nonzero;stroke:#2b2b2b;stroke-width:1.8839674;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           sodipodi:type="arc"
+           inkscape:export-filename="/home/chipx86/Documents/graphics/themes/clocks/gremlin.png"
+           inkscape:export-xdpi="90"
+           inkscape:export-ydpi="90" />
+      </g>
+    </g>
+  </g>
+</svg>

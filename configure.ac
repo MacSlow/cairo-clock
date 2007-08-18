@@ -99,23 +99,25 @@ dnl CFLAGS
 CFLAGS="$CFLAGS -Wall -pedantic -std=c99 -fno-strict-aliasing -fmessage-length=0 -D_FORTIFY_SOURCE=2"
 
 AC_CONFIG_FILES([
-    Makefile
-    desktop/Makefile
-    desktop/cairo-clock.desktop
-    pixmaps/Makefile
-    glade/Makefile
-    src/Makefile
-    man/Makefile
-    po/Makefile.in
-    themes/Makefile
-    themes/fdo/Makefile
-    themes/simple/Makefile
-    themes/default/Makefile
-    themes/glassy/Makefile
-    themes/zen/Makefile
-    themes/antique/Makefile
-    themes/radium/Makefile
-    themes/funky/Makefile
+	Makefile
+	desktop/Makefile
+	desktop/cairo-clock.desktop
+	pixmaps/Makefile
+	glade/Makefile
+	src/Makefile
+	man/Makefile
+	po/Makefile.in
+	themes/Makefile
+	themes/fdo/Makefile
+	themes/simple/Makefile
+	themes/default/Makefile
+	themes/glassy/Makefile
+	themes/gremlin/Makefile
+	themes/gremlin-24/Makefile
+	themes/zen/Makefile
+	themes/antique/Makefile
+	themes/radium/Makefile
+	themes/funky/Makefile
 	themes/default-24/Makefile
 	themes/ipulse/Makefile
 	themes/ipulse-24/Makefile
