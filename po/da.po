@@ -1,15 +1,18 @@
+# Jens Fursund <jens.fursund@gmail.com>, 2007.
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: cairo-clock\n"
 "Report-Msgid-Bugs-To: Mirco Müller <macslow@bangang.de>\n"
 "POT-Creation-Date: 2007-08-17 11:14+0100\n"
-"PO-Revision-Date: 2007-08-17 11:14+0100\n"
-"Last-Translator: Jens Fursund <jens.fursund@gmail.com>\n"
+"PO-Revision-Date: 2007-08-18 15:29+0200\n"
+"Last-Translator: Peter Frandsen <pfrandsen@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
 
 #: ../desktop/cairo-clock.desktop.in.h:1 ../glade/cairo-clock.glade.h:288
 #: ../src/cairo-clock.c:1638
@@ -18,7 +21,7 @@ msgstr "MacSlow's Cairo-Ur"
 
 #: ../desktop/cairo-clock.desktop.in.h:2
 msgid "a super fine analog clock"
-msgstr "et superfint analogt ur"
+msgstr "et super smart analogt ur"
 
 #: ../glade/cairo-clock.glade.h:1
 msgid "(C) 2006 - 2007 Mirco \"MacSlow\" Müller"
@@ -42,7 +45,7 @@ msgstr "<b>_Tema</b>"
 
 #: ../glade/cairo-clock.glade.h:6
 msgid "Appear in _pager"
-msgstr "Synlig i _pager"
+msgstr "Synlig i _oversigt"
 
 #: ../glade/cairo-clock.glade.h:7
 msgid "Appear in task_bar"
@@ -62,15 +65,15 @@ msgstr "Altid øverst"
 
 #: ../glade/cairo-clock.glade.h:289
 msgid "MacSlow's Cairo-Clock - Error"
-msgstr "MacSlow's Cairo-Clock - Fejl"
+msgstr "MacSlow's Cairo-Ur - Fejl"
 
 #: ../glade/cairo-clock.glade.h:290
 msgid "MacSlow's Cairo-Clock - Information"
-msgstr "MacSlow's Cairo-Clock - Information"
+msgstr "MacSlow's Cairo-Ur - Information"
 
 #: ../glade/cairo-clock.glade.h:291
 msgid "MacSlow's Cairo-Clock - Settings"
-msgstr "MacSlow's Cairo-Clock - Indstillinger"
+msgstr "MacSlow's Cairo-Ur - Indstillinger"
 
 #: ../glade/cairo-clock.glade.h:292
 msgid "Properties"
@@ -94,7 +97,7 @@ msgstr "Vis på alle skriveborde"
 
 #: ../glade/cairo-clock.glade.h:297
 msgid "_Use 24h mode"
-msgstr "Anvend 24 timers ur"
+msgstr "_Brug 24 timers tilstand"
 
 #: ../glade/cairo-clock.glade.h:298
 msgid "_Width:"
@@ -110,7 +113,7 @@ msgstr "cairo-ur hjemmesiden"
 
 #: ../glade/cairo-clock.glade.h:301
 msgid "close this settings-dialog"
-msgstr "luk denne indstillings-dialog"
+msgstr "luk denne indstillingsdialog"
 
 #: ../glade/cairo-clock.glade.h:302
 msgid "get information on all settings-options"
@@ -118,7 +121,7 @@ msgstr "vis information om alle indstillingsmuligheder"
 
 #: ../glade/cairo-clock.glade.h:303
 msgid "if enabled the workspace pager will show the window of the clock"
-msgstr "hvis aktiveret, viser skrivebords-pageren urets vindue"
+msgstr "hvis aktiveret, viser skrivebordsoversigten urets vindue"
 
 #: ../glade/cairo-clock.glade.h:304
 msgid "if enabled, the clock window will be kept above all other windows"
@@ -126,7 +129,7 @@ msgstr "hvis aktiveret, vil uret blive over alle andre vinduer"
 
 #: ../glade/cairo-clock.glade.h:305
 msgid "if enabled, the current date will be displayed inside the clocks face"
-msgstr "hvis aktiveret, vil dags dato blive vist inde i uret"
+msgstr "hvis aktiveret, vil dags dato blive vist på urskiven"
 
 #: ../glade/cairo-clock.glade.h:306
 msgid "if enabled, the seconds hand will be drawn"
@@ -158,7 +161,7 @@ msgstr ""
 "lille (50x50)\n"
 "mellem (100x100)\n"
 "stor (200x200)\n"
-"egen indstilling"
+"brugerdefineret"
 
 #: ../glade/cairo-clock.glade.h:315
 msgid "smooth"
@@ -168,7 +171,7 @@ msgstr "glat"
 #: ../glade/cairo-clock.glade.h:317
 #, c-format
 msgid "translator-credits"
-msgstr "sv: Andreas Henriksson <andreas@fatal.se>"
+msgstr "da: Jens Fursund <jens.fursund@gmail.com>, Peter Frandsen <pfrandsen@gmail.com>"
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."
@@ -180,7 +183,7 @@ msgstr "Lad være med at ændre den manuelt!"
 
 #: ../src/cairo-clock.c:832
 msgid "I really mean it!!!"
-msgstr "Jag menar det verkligen!!!"
+msgstr "Jeg mener det virkeligt!!!"
 
 #: ../src/cairo-clock.c:875
 #, c-format
@@ -225,7 +228,7 @@ msgstr "urvinduet forbliver over alle andre vinduer"
 
 #: ../src/cairo-clock.c:1393
 msgid "clock-window shows up in pager"
-msgstr "urvinduet vises i pageren"
+msgstr "urvinduet vises i oversigten"
 
 #: ../src/cairo-clock.c:1400
 msgid "clock-window shows up in taskbar"
@@ -241,11 +244,11 @@ msgstr "viserne bruger 12 timers ur"
 
 #: ../src/cairo-clock.c:1421
 msgid "hands work in 24 hour mode"
-msgstr "viserne bruger 12 timers ur"
+msgstr "viserne bruger 24 timers ur"
 
 #: ../src/cairo-clock.c:1428
 msgid "render at RATE (default: 30 Hz)"
-msgstr "render med RATE (standard: 30 Hz)"
+msgstr "gentegningsfrekvens (standard: 30 Hz)"
 
 #: ../src/cairo-clock.c:1435
 msgid "print version of program and exit"
