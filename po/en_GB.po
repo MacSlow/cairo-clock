@@ -126,7 +126,7 @@ msgstr "if enabled, the clock window will be kept above all other windows"
 
 #: ../glade/cairo-clock.glade.h:305
 msgid "if enabled, the current date will be displayed inside the clocks face"
-msgstr "if enabled, the current date will be displayed inside the clocks face"
+msgstr "if enabled, the current date will be displayed inside the clock's face"
 
 #: ../glade/cairo-clock.glade.h:306
 msgid "if enabled, the seconds hand will be drawn"
@@ -155,10 +155,10 @@ msgid ""
 "large (200x200)\n"
 "custom"
 msgstr ""
-"klein (50x50)\n"
-"mittel (100x100)\n"
-"groß (200x200)\n"
-"speziell"
+"small (50x50)\n"
+"medium (100x100)\n"
+"large (200x200)\n"
+"custom"
 
 #: ../glade/cairo-clock.glade.h:315
 msgid "smooth"
