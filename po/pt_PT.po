@@ -50,7 +50,7 @@ msgstr "Mostrar na _barra de tarefas"
 
 #: ../glade/cairo-clock.glade.h:285
 msgid "H_eight:"
-msgstr "A_ltura:"
+msgstr "_Altura:"
 
 #: ../glade/cairo-clock.glade.h:286
 msgid "Info"
@@ -90,7 +90,7 @@ msgstr "Mostrar _segundos"
 
 #: ../glade/cairo-clock.glade.h:296
 msgid "Stic_k to every workspace"
-msgstr "Colar a todos os ambientes de trabalho"
+msgstr "Mostrar em _todos os ambientes de trabalho"
 
 #: ../glade/cairo-clock.glade.h:297
 msgid "_Use 24h mode"
@@ -98,7 +98,7 @@ msgstr "_Usar modo de 24 horas"
 
 #: ../glade/cairo-clock.glade.h:298
 msgid "_Width:"
-msgstr "Largura"
+msgstr "_Largura"
 
 #: ../glade/cairo-clock.glade.h:299
 msgid "an analog clock based on vector-graphics"
@@ -118,11 +118,11 @@ msgstr "obter informatção sobre todas as opções de configuração"
 
 #: ../glade/cairo-clock.glade.h:303
 msgid "if enabled the workspace pager will show the window of the clock"
-msgstr "se activado o pager do ambiente de trabalho irá mostrar a janela do relógio"
+msgstr "se activado, o pager do ambiente de trabalho irá mostrar a janela do relógio"
 
 #: ../glade/cairo-clock.glade.h:304
 msgid "if enabled, the clock window will be kept above all other windows"
-msgstr "se activado, a janela do relógio será mantida acima de todas as outras janelas"
+msgstr "se activado, a janela do relógio será mantida em cima de todas as outras janelas"
 
 #: ../glade/cairo-clock.glade.h:305
 msgid "if enabled, the current date will be displayed inside the clocks face"
