@@ -454,11 +454,9 @@ msgstr "平滑"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../glade/cairo-clock.glade.h:317
+#, c-format
 msgid "translator-credits"
-msgstr ""
-"zh_TW:\n"
-"Kanru Chen (陳侃如)\n"
-"<kanru@csie.us>"
+msgstr "zh_TW:\nKanru Chen (陳侃如)\n<kanru@csie.us>"
 
 #: ../src/cairo-clock.c:878
 msgid "# This file is machine-generated."

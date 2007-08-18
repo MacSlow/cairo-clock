@@ -168,7 +168,7 @@ msgstr "fein"
 #: ../glade/cairo-clock.glade.h:317
 #, c-format
 msgid "translator-credits"
-msgstr "de, en:\nMirco \"MacSlow\" Müller\n<macslow@bangang.de>"
+msgstr "de:\nMirco \"MacSlow\" Müller\n<macslow@bangang.de>"
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."
@@ -237,11 +237,11 @@ msgstr "Fenster der Uhr erscheint auf allen Arbeitsplätzen"
 
 #: ../src/cairo-clock.c:1414
 msgid "hands work in 12 hour mode"
-msgstr "Zeiger verwenden 12-Stunden Darstellung"
+msgstr "Stundenzeiger verwendet 12-Stunden Darstellung"
 
 #: ../src/cairo-clock.c:1421
 msgid "hands work in 24 hour mode"
-msgstr "Zeiger verwenden 24-Stunden Darstellung"
+msgstr "Stundenzeiger verwendet 24-Stunden Darstellung"
 
 #: ../src/cairo-clock.c:1428
 msgid "render at RATE (default: 30 Hz)"

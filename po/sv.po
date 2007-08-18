@@ -168,7 +168,7 @@ msgstr "mjuk"
 #: ../glade/cairo-clock.glade.h:317
 #, c-format
 msgid "translator-credits"
-msgstr "sv: Andreas Henriksson <andreas@fatal.se>"
+msgstr "sv:\nAndreas Henriksson\n<andreas@fatal.se>"
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."

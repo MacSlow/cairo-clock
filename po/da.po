@@ -171,7 +171,7 @@ msgstr "glat"
 #: ../glade/cairo-clock.glade.h:317
 #, c-format
 msgid "translator-credits"
-msgstr "da: Jens Fursund <jens.fursund@gmail.com>, Peter Frandsen <pfrandsen@gmail.com>"
+msgstr "da: Jens Fursund <jens.fursund@gmail.com>\nPeter Frandsen <pfrandsen@gmail.com>"
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."

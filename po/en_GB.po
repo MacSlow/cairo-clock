@@ -168,7 +168,7 @@ msgstr "smooth"
 #: ../glade/cairo-clock.glade.h:317
 #, c-format
 msgid "translator-credits"
-msgstr "Malcolm Parsons"
+msgstr "en_GB: Malcolm Parsons\n<malcolm.parsons@gmail.com>"
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."

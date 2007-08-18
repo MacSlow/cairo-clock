@@ -170,10 +170,7 @@ msgstr "точно"
 #: ../glade/cairo-clock.glade.h:317
 #, c-format
 msgid "translator-credits"
-msgstr ""
-"ru:\n"
-"Valek (frob) Filippov\n"
-"<frob@df.ru>"
+msgstr "ru:\nValek (frob) Filippov\n<frob@df.ru>"
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."

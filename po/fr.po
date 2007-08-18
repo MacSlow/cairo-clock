@@ -169,10 +169,7 @@ msgstr "lisse"
 #: ../glade/cairo-clock.glade.h:317
 #, c-format
 msgid "translator-credits"
-msgstr ""
-"fr\n"
-"Thomas Constans\n"
-"<thomas.constans@opendoor.fr>"
+msgstr "fr:\nThomas Constans\n<thomas.constans@opendoor.fr>"
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."
