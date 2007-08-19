@@ -1,10 +1,5 @@
-A bunch of new themes are added, which were supplied to me by people over the
-last couple of weeks. Also a suggested 24h-mode is now part of cairo-clock,
-thanks to Darryll Turchan for the patch. Seems like people really want this
-badly, if I get a patch for this :) Still I regard a 24h-mode as strange,
-because the brain is usually "conditioned" to a normal 12h-layout for analogue
-clocks. Darryll also took on the effort to supply some modified versions of a
-few older themes and a couple of his own creations to support the 24h-mode. At
-the moment you have to select a theme with a "-24" end in its name to get a
-clock-face that fits a 24h-mode. There is no "intelligence" in cairo-clock
-yet to make this theme-/mode-selection automatic and transparent to the user. 
+localized for da, de, en_GB, es, fi, fr, it, nl, pl, pt_PT, ru, sl, sv, tr, zh_CN and zh_TW
+using GOption and GList now
+checking for a composited desktop-environment, thus depending on gtk+ >= 2.10.0
+brand new theme included
+smooth hand animations
