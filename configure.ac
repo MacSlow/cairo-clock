@@ -101,7 +101,6 @@ CFLAGS="$CFLAGS -Wall -pedantic -std=c99 -fno-strict-aliasing -fmessage-length=0
 AC_CONFIG_FILES([
 	Makefile
 	desktop/Makefile
-	desktop/cairo-clock.desktop
 	pixmaps/Makefile
 	glade/Makefile
 	src/Makefile
