@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cairo-clock\n"
-"Report-Msgid-Bugs-To: Mirco Mæller <macslow@bangang.de>\n"
+"Report-Msgid-Bugs-To: Mirco MÃ¦ller <macslow@bangang.de>\n"
 "POT-Creation-Date: 2007-08-17 06:19+0100\n"
 "PO-Revision-Date: 2007-08-17 06:19+0100\n"
-"Last-Translator: Mirco Mæller <macslow@bangang.de>\n"
-"Language-Team: Mirco Mæller <macslow@bangang.de>\n"
+"Last-Translator: Mirco MÃ¦ller <macslow@bangang.de>\n"
+"Language-Team: Mirco MÃ¦ller <macslow@bangang.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,12 +21,12 @@ msgid "a super fine analog clock"
 msgstr "uno stupendo orologio analogico"
 
 #: ../glade/cairo-clock.glade.h:1
-msgid "(C) 2006 - 2007 Mirco \"MacSlow\" Mæller"
-msgstr "(C) 2006 - 2007 Mirco \"MacSlow\" Mæller"
+msgid "(C) 2006 - 2007 Mirco \"MacSlow\" MÃ¦ller"
+msgstr "(C) 2006 - 2007 Mirco \"MacSlow\" MÃ¦ller"
 
 #: ../glade/cairo-clock.glade.h:2
 msgid "<b>Animation Smoothness</b>"
-msgstr "<b>Fluidit�� dell'Animazione</b>"
+msgstr "<b>FluiditÃá dell'Animazione</b>"
 
 #: ../glade/cairo-clock.glade.h:3
 msgid "<b>Display Options</b>"
@@ -74,7 +74,7 @@ msgstr "MacSlow's Cairo-Clock - Preferenze"
 
 #: ../glade/cairo-clock.glade.h:292
 msgid "Properties"
-msgstr "Propriet��"
+msgstr "ProprietÃá"
 
 #: ../glade/cairo-clock.glade.h:293
 msgid "Quit"
@@ -94,7 +94,7 @@ msgstr "Mostrare su tutte le aree di lavoro"
 
 #: ../glade/cairo-clock.glade.h:297
 msgid "_Use 24h mode"
-msgstr "_Usa modalit�� 24h"
+msgstr "_Usa modalitÃá 24h"
 
 #: ../glade/cairo-clock.glade.h:298
 msgid "_Width:"
@@ -118,23 +118,23 @@ msgstr "Informazioni su tutte le opzioni di configurazione"
 
 #: ../glade/cairo-clock.glade.h:303
 msgid "if enabled the workspace pager will show the window of the clock"
-msgstr "se abilitato il pager dell'area di lavoro mostrer�� la finestra dell'orologio"
+msgstr "se abilitato il pager dell'area di lavoro mostrerÃá la finestra dell'orologio"
 
 #: ../glade/cairo-clock.glade.h:304
 msgid "if enabled, the clock window will be kept above all other windows"
-msgstr "se abilitato, la finestra dell'orologio verr�� mantenuta in primo piano"
+msgstr "se abilitato, la finestra dell'orologio verrÃá mantenuta in primo piano"
 
 #: ../glade/cairo-clock.glade.h:305
 msgid "if enabled, the current date will be displayed inside the clocks face"
-msgstr "se abilitato, la data corrente verr�� mostrata nel quadrante dell'orologio"
+msgstr "se abilitato, la data corrente verrÃá mostrata nel quadrante dell'orologio"
 
 #: ../glade/cairo-clock.glade.h:306
 msgid "if enabled, the seconds hand will be drawn"
-msgstr "se abilitato, verr�� disegnata la lancetta dei secondi"
+msgstr "se abilitato, verrÃá disegnata la lancetta dei secondi"
 
 #: ../glade/cairo-clock.glade.h:307
 msgid "if enabled, the window of the clock will be shown in the taskbar"
-msgstr "se abilitato, la finestra dell'orologio verr�� mostrata nella barra applicazioni"
+msgstr "se abilitato, la finestra dell'orologio verrÃá mostrata nella barra applicazioni"
 
 #: ../glade/cairo-clock.glade.h:308
 msgid "initial window-height when program starts"
@@ -172,7 +172,7 @@ msgstr "it:\nRossano \"left\" Gobbi\n<rgobbi@punkmusic.com>\nLoris Cuoghi <devon
 
 #: ../src/cairo-clock.c:830
 msgid "# This file is machine-generated."
-msgstr "# Questo file ÿ generato automaticamente"
+msgstr "# Questo file Ã¿ generato automaticamente"
 
 #: ../src/cairo-clock.c:831
 msgid "Do not edit it manually!"
@@ -185,7 +185,7 @@ msgstr "Dico sul serio!!!"
 #: ../src/cairo-clock.c:875
 #, c-format
 msgid "Ups, there was an error while trying to save the preferences!\n"
-msgstr "Oops, un errore ÿ occorso cercando di salvare le preferenze!\n"
+msgstr "Oops, un errore Ã¿ occorso cercando di salvare le preferenze!\n"
 
 #: ../src/cairo-clock.c:1330
 msgid "x-position of the top-left window-corner"
@@ -237,11 +237,11 @@ msgstr "la finestra dell'orologio viene visualizzata in tutte le aree di lavoro"
 
 #: ../src/cairo-clock.c:1414
 msgid "hands work in 12 hour mode"
-msgstr "la lancetta funziona in modalit�� 12 ore"
+msgstr "la lancetta funziona in modalitÃá 12 ore"
 
 #: ../src/cairo-clock.c:1421
 msgid "hands work in 24 hour mode"
-msgstr "la lancetta funziona in modalit�� 24 ore"
+msgstr "la lancetta funziona in modalitÃá 24 ore"
 
 #: ../src/cairo-clock.c:1428
 msgid "render at RATE (default: 30 Hz)"
