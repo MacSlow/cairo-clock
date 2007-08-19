@@ -2,16 +2,16 @@ Source: cairo-clock
 Section: x11
 Priority: optional
 Maintainer: Mirco Müller <macslow@bangang.de>
-Build-Depends: debhelper (>= 4.0.0), autotools-dev, libgtk2.0-dev (>= 2.8.6), libcairo2-dev (>= 1.0.2), libglade2-dev (>= 2.5.1), librsvg2-dev (>= 2.13.93)
+Build-Depends: debhelper (>= 4.0.0), autotools-dev, libgtk2.0-dev (>= 2.10.0), libcairo2-dev (>= 1.2.0), libglade2-dev (>= 2.6.0), librsvg2-dev (>= 2.14.0)
 Standards-Version: 3.6.2
 
 Package: cairo-clock
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libgtk2.0-0 (>= 2.8.6), libcairo2 (>= 1.0.2), libglade2-0 (>= 2.5.1), librsvg2-2 (>= 2.13.93)
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgtk2.0-0 (>= 2.10.0), libcairo2 (>= 1.2.0), libglade2-0 (>= 2.6.0), librsvg2-2 (>= 2.14.0)
 Recommends: xcompmgr, compiz, x11-common (>= 7.0.0)
-Replaces: cairo-clock (<= 0.3.1)
+Replaces: cairo-clock (<= 0.3.2)
 Description: An analog clock drawn with vector-graphics.
- It’s an analog clock displaying the system-time. It leverages the new visual
+ It is an analog clock displaying the system-time. It leverages the new visual
  features offered by Xorg 7.0 in combination with a compositing-manager (e.g.
- like xcompmgr or compiz), gtk+ 2.8.6, cairo 1.0.2, libglade 2.5.1 and librsvg
- 2.13.93 to produce a time display with pretty-pixels.
+ like xcompmgr or compiz), gtk+ 2.10.0, cairo 1.2.0, libglade 2.6.0 and librsvg
+ 2.14.0 to produce a time display with pretty-pixels.
