@@ -1157,8 +1157,13 @@ change_theme (ThemeEntry* pThemeList,
 		strcat (pcFullFilename, g_cFileNames[iElement]);
 		g_pSvgHandles[iElement] = rsvg_handle_new_from_file (pcFullFilename,
 								     &pError);
+
 		free (pcFullFilename);
 	}
+
+	/* update size-info of loaded theme */
+	rsvg_handle_get_dimensions (g_pSvgHandles[CLOCK_DROP_SHADOW],
+				    &g_DimensionData);
 
 	if (window)
 		gtk_widget_queue_draw (window);
