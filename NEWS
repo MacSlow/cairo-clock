@@ -1,5 +1,31 @@
-localized for da, de, en_GB, es, fi, fr, it, nl, pl, pt_PT, ru, sl, sv, tr, zh_CN and zh_TW
-using GOption and GList now
-checking for a composited desktop-environment, thus depending on gtk+ >= 2.10.0
-brand new theme included
-smooth hand animations
+* using gettext now and localized for:
+
+	da
+	de
+	en_GB
+	es
+	fi
+	fr
+	it
+	nl
+	pl
+	pt_PT
+	ru
+	sl
+	sv
+	tr
+	zh_CN
+	zh_TW
+
+* using GOption, GList and GString for theme-list handling
+
+* checking for composited desktop-environment, thus depending on gtk+ >= 2.10.0
+
+* new theme included: gremlin/gremlin-24
+
+* smooth hand animations
+
+* fixed close-button in about-dialog
+
+* added workaround for "white rectangle"-bug in xserver, see freedesktop
+bugzilla-entry #11109 (https://bugs.freedesktop.org/show_bug.cgi?id=11109)

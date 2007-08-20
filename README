@@ -1,9 +1,10 @@
-My try at producing a sleek looking analog clock you see on OS X and Vista these
-days. No more pure cairo-calls. This time SVGs all the way! Drags around with
-the LMB pressed, resizes with the MMB pressed. Exits on <ESC>. It has already
-grown larger than I anticipated. I guess people like funky desktop visuals after
-all.
+It is an analog clock displaying the system-time. It leverages the new visual
+features offered by Xorg 7.0 in combination with a compositing-manager (e.g.
+like xcompmgr or compiz), gtk+ 2.10.0, cairo 1.2.0, libglade 2.6.0 and librsvg
+2.14.0 to produce a time display with pretty-pixels.
 
-For more up-to-date info take a look at the projects homepage located at:
+For more up-to-date info, screenshots and screencasts take a look at the
+project-homepage located at:
 
-	http://macslow.thepimp.net/?page_id=23
+	http://macslow.thepimp.net/cairo-clock
+
