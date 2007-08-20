@@ -95,10 +95,8 @@ typedef enum _StartupSizeKind
 
 typedef struct _ThemeEntry
 {
-	struct _ThemeEntry* pPrev;
-	char* pcName;
-	char* pcPath;
-	struct _ThemeEntry* pNext;
+	GString* pName;
+	GString* pPath;
 } ThemeEntry;
 
 /* yeah I know... global variables are the devil */
@@ -155,7 +153,7 @@ GtkWidget*	  g_pSpinButtonHeight	 = NULL;
 GtkWidget*	  g_pHScaleSmoothness	 = NULL;
 guint		  g_iuIntervalHandlerId	 = 0;
 gint		  g_iThemeCounter	 = 0;
-ThemeEntry*	  g_pThemeList;
+GList*		  g_pThemeList		 = NULL;
 gchar		  g_acAppName[]		 = "MacSlow's Cairo-Clock";
 gchar		  g_acAppVersion[]	 = "0.3.3";
 gboolean	  g_bNeedsUpdate	 = TRUE;
@@ -409,7 +407,6 @@ render (gint iWidth,
 	static double		    fAngleMinute      = 0.0f;
 	static double		    fAngleHour        = 0.0f;
 	static gboolean		    bAnimateMinute    = FALSE;
-	static double		    fDateAlpha	      = 0.0f;
 
 	fFactor = powf ((float) iFrames /
 			(float) g_iRefreshRate *
@@ -926,233 +923,114 @@ on_close_clicked (GtkButton* pButton,
 		free (pcFilename);
 }
 
-static ThemeEntry*
-theme_list_get_first (ThemeEntry* pEntry)
+static GList*
+get_theme_list (GString* pSystemPath,
+		GString* pUserPath)
 {
-	ThemeEntry* pSomeEntry = pEntry;
+	GDir*	    pThemeDir	= NULL;
+	GString*    pThemeName	= NULL;
+	GList*	    pThemeList	= NULL;
+	ThemeEntry* pThemeEntry	= NULL;
 
-	if (!pSomeEntry)
-		return NULL;
-
-	while (pSomeEntry->pPrev)
-		pSomeEntry = pSomeEntry->pPrev;
-
-	return pSomeEntry;
-}
-
-static ThemeEntry*
-theme_list_get_last (ThemeEntry* pEntry)
-{
-	ThemeEntry* pSomeEntry = pEntry;
-
-	if (!pSomeEntry)
-		return NULL;
-
-	while (pSomeEntry->pNext)
-		pSomeEntry = pSomeEntry->pNext;
-
-	return pSomeEntry;
-}
-
-static ThemeEntry*
-theme_entry_get_next (ThemeEntry* pEntry)
-{
-	if (!pEntry)
-		return NULL;
-
-	return pEntry->pNext;
-}
-
-static ThemeEntry*
-theme_entry_new (gchar* pcName,
-		 gchar* pcPath)
-{
-	ThemeEntry* pEntry = NULL;
-
-	if (!pcName || !pcPath)
-		return NULL;
-
-	pEntry = (ThemeEntry*) calloc (sizeof (ThemeEntry), 1);
-	if (!pEntry)
-		return NULL;
-
-	pEntry->pcName = (char*) calloc (sizeof (gchar), strlen (pcName) + 1);
-	if (!pEntry->pcName)
-	{
-		free (pEntry);
-		return NULL;
-	}
-	strcpy (pEntry->pcName, pcName);
-
-	pEntry->pcPath = (char*) calloc (sizeof (gchar), strlen (pcPath) + 1);
-	if (!pEntry->pcPath)
-	{
-		free (pEntry->pcName);
-		free (pEntry);
-		return NULL;
-	}
-	strcpy (pEntry->pcPath, pcPath);
-
-	return pEntry;
-}
-
-static void
-theme_entry_delete (ThemeEntry* pSomeEntry)
-{
-	if (!pSomeEntry)
-		return;
-
-	free (pSomeEntry->pcName);
-	free (pSomeEntry->pcPath);
-	free (pSomeEntry);	
-}
-
-static void
-theme_entry_append (ThemeEntry* pThemeList,
-		    ThemeEntry* pNewEntry)
-{
-	ThemeEntry* pLastEntry = NULL;
-
-	if (!pThemeList || !pNewEntry)
-		return;
-
-	pLastEntry = theme_list_get_last (pThemeList);
-	if (!pLastEntry)
-		return;
-
-	pLastEntry->pNext = pNewEntry;
-	pNewEntry->pPrev = pLastEntry;
-}
-
-static void
-theme_list_delete (ThemeEntry* pEntry)
-{
-	ThemeEntry* pSomeEntry = pEntry;
-	ThemeEntry* pListHead = NULL;
-
-	if (!pSomeEntry)
-		return;
-
-	pListHead = theme_list_get_first (pSomeEntry);
-
-	while (pListHead != theme_list_get_last (pListHead))
-	{
-		pSomeEntry = theme_list_get_last (pListHead);
-		pSomeEntry->pPrev->pNext = NULL;
-		theme_entry_delete (pSomeEntry);
-	}
-
-	theme_entry_delete (pListHead);
-}
-
-static ThemeEntry*
-get_theme_list (gchar* pcSystemPath,
-		gchar* pcUserPath)
-{
-	GDir*	    pThemeDir	   = NULL;
-	gchar*	    pcThemeName	   = NULL;
-	ThemeEntry* pThemeListHead = NULL;
-
-	pThemeDir = g_dir_open (pcSystemPath, 0, NULL);
+	pThemeDir = g_dir_open (pSystemPath->str, 0, NULL);
 	if (!pThemeDir)
 		return NULL;
 
-	do
+	pThemeName = g_string_new (g_dir_read_name (pThemeDir));
+	while (pThemeName->len != 0)
 	{
-		pcThemeName = (gchar*) g_dir_read_name (pThemeDir);
-		if (pcThemeName)
+		pThemeEntry = (ThemeEntry*) g_malloc0 (sizeof (ThemeEntry));
+		if (pThemeName && pThemeEntry)
 		{
-			if (!pThemeListHead)
-				pThemeListHead = theme_entry_new (pcThemeName,
-								  pcSystemPath);
-			else
-			{
-				theme_entry_append (pThemeListHead,
-						    theme_entry_new (pcThemeName,
-								     pcSystemPath));
-			}
+			pThemeEntry->pPath = g_string_new (pSystemPath->str);
+			pThemeEntry->pName = g_string_new (pThemeName->str);
+			pThemeList = g_list_append (pThemeList,
+						    (gpointer) pThemeEntry);
 		}
-	} while (pcThemeName);
-	g_dir_close (pThemeDir);
-
-	pThemeDir = g_dir_open (pcUserPath, 0, NULL);
-	if (!pThemeDir)
-		return pThemeListHead;
-	do
-	{
-		pcThemeName = (gchar*) g_dir_read_name (pThemeDir);
-		if (pcThemeName)
+		else
 		{
-			if (!pThemeListHead)
-				pThemeListHead = theme_entry_new (pcThemeName,
-								  pcUserPath);
-			else
-			{
-				theme_entry_append (pThemeListHead,
-						    theme_entry_new (pcThemeName,
-								     pcUserPath));
-			}
+			g_free (pThemeEntry);
+			g_string_free (pThemeName, TRUE);
 		}
-	} while (pcThemeName);
-	g_dir_close (pThemeDir);
 
-	return pThemeListHead;
-}
-
-static ThemeEntry*
-theme_list_get_entry_by_index (ThemeEntry* pThemeList,
-			       gint	   iThemeIndex)
-{
-	ThemeEntry* pListHead	= NULL;
-	ThemeEntry* pThemeEntry = NULL;
-	gint	    iIndex	= 0;
-
-	if (!pThemeList)
-		return NULL;
-
-	pListHead = theme_list_get_first (pThemeList);
-	pThemeEntry = pListHead;
-	while (iIndex < iThemeIndex)
-	{
-		pThemeEntry = theme_entry_get_next (pThemeEntry);
-		iIndex++;
+		pThemeName = g_string_new (g_dir_read_name (pThemeDir));
 	}
+	g_dir_close (pThemeDir);
 
-	return pThemeEntry;
+	pThemeDir = g_dir_open (pUserPath->str, 0, NULL);
+	if (!pThemeDir)
+		return pThemeList;
+
+	pThemeName = g_string_new (g_dir_read_name (pThemeDir));
+	while (pThemeName->len != 0)
+	{
+		pThemeEntry = (ThemeEntry*) g_malloc0 (sizeof (ThemeEntry));
+		if (pThemeName && pThemeEntry)
+		{
+			pThemeEntry->pPath = g_string_new (pUserPath->str);
+			pThemeEntry->pName = g_string_new (pThemeName->str);
+			pThemeList = g_list_append (pThemeList,
+						    (gpointer) pThemeEntry);
+		}
+		else
+		{
+			g_free (pThemeEntry);
+			g_string_free (pThemeName, TRUE);
+		}
+
+		pThemeName = g_string_new (g_dir_read_name (pThemeDir));
+	}
+	g_dir_close (pThemeDir);
+
+	return g_list_first (pThemeList);
 }
 
 static void
-change_theme (ThemeEntry* pThemeList,
-	      gint	  iThemeIndex,
-	      GtkWidget*  window)
+delete_entry (gpointer themeEntry, gpointer data)
 {
-	ThemeEntry* pTheme	   = NULL;
-	gchar*	    pcFullFilename = NULL;
-	gint	    iElement	   = 0;
-	GError*	    pError	   = NULL;
+	g_string_free (((ThemeEntry*) themeEntry)->pPath, TRUE);
+	g_string_free (((ThemeEntry*) themeEntry)->pName, TRUE);
+	g_free (themeEntry);
+}
+
+static void
+theme_list_delete (GList* pThemeList)
+{
+	g_list_foreach (pThemeList, delete_entry, NULL);
+}
+
+static void
+change_theme (GList*	 pThemeList,
+	      guint	 uiThemeIndex,
+	      GtkWidget* pWindow)
+{
+	GList*	pThemeEntry    = NULL;
+	gchar*	pcFullFilename = NULL;
+	gint	iElement       = 0;
+	GError*	pError	       = NULL;
 
 	if (!pThemeList)
 		return;
 
-	pTheme = theme_list_get_entry_by_index (pThemeList,
-						iThemeIndex);
-	if (!pTheme)
+	pThemeEntry = g_list_nth (pThemeList, uiThemeIndex);
+
+	if (!pThemeEntry)
 		return;
 
-	if (window)
+	if (pWindow)
 		for (iElement = 0; iElement < CLOCK_ELEMENTS; iElement++)
 			rsvg_handle_free (g_pSvgHandles[iElement]);
 
 	for (iElement = 0; iElement < CLOCK_ELEMENTS; iElement++)
 	{
 		pcFullFilename = (gchar*) calloc (sizeof (gchar*),
-						  strlen (pTheme->pcPath) +
-						  strlen (pTheme->pcName) +
+						  ((ThemeEntry*) (pThemeEntry->data))->pPath->len +
+						  ((ThemeEntry*) (pThemeEntry->data))->pName->len +
 						  strlen (g_cFileNames[iElement])
 						  + 3);
-		strcpy (pcFullFilename, pTheme->pcPath);
+		strcpy (pcFullFilename, ((ThemeEntry*) (pThemeEntry->data))->pPath->str);
 		strcat (pcFullFilename, "/");
-		strcat (pcFullFilename, pTheme->pcName);
+		strcat (pcFullFilename, ((ThemeEntry*) (pThemeEntry->data))->pName->str);
 		strcat (pcFullFilename, "/");
 		strcat (pcFullFilename, g_cFileNames[iElement]);
 		g_pSvgHandles[iElement] = rsvg_handle_new_from_file (pcFullFilename,
@@ -1165,26 +1043,23 @@ change_theme (ThemeEntry* pThemeList,
 	rsvg_handle_get_dimensions (g_pSvgHandles[CLOCK_DROP_SHADOW],
 				    &g_DimensionData);
 
-	if (window)
-		gtk_widget_queue_draw (window);
+	if (pWindow)
+		gtk_widget_queue_draw (pWindow);
 }
 
 static void
-print_theme_list (void)
+print_theme_entry (gpointer themeEntry,
+		   gpointer data)
 {
-	ThemeEntry* pThemeEntry = NULL;
+	printf ("%s (%s)\n",
+		((ThemeEntry*) themeEntry)->pName->str,
+		((ThemeEntry*) themeEntry)->pPath->str);
+}
 
-	if (g_pThemeList)
-	{
-		pThemeEntry = g_pThemeList;
-		while (pThemeEntry)
-		{
-			printf ("%s (%s)\n",
-				pThemeEntry->pcName,
-				pThemeEntry->pcPath);
-			pThemeEntry = theme_entry_get_next (pThemeEntry);
-		}
-	}
+static void
+print_theme_list (GList* pThemeList)
+{
+	g_list_foreach (pThemeList, print_theme_entry, NULL);
 }
 
 static void
@@ -1371,7 +1246,7 @@ main (int    argc,
 	GtkWidget*	     pCheckButton24h		 = NULL;
 	GtkWidget*	     pButtonHelp		 = NULL;
 	GtkWidget*	     pButtonClose		 = NULL;
-	ThemeEntry*	     pThemeEntry		 = NULL;
+	GList*		     pThemeEntry		 = NULL;
 	gchar*		     pcFilename			 = NULL;
 	GError*		     pError			 = NULL;
 	GOptionContext*	     pOptionContext		 = NULL;
@@ -1494,11 +1369,8 @@ main (int    argc,
 	textdomain (GETTEXT_PACKAGE);
 
 	/* read in names of all installed themes */
-	pcFilename = get_user_theme_path ();
-	g_pThemeList = get_theme_list (get_system_theme_path (),
-				       pcFilename);
-	if (pcFilename)
-		free (pcFilename);
+	g_pThemeList = get_theme_list (g_string_new (get_system_theme_path ()),
+				       g_string_new (get_user_theme_path ()));
 
 	gtk_init (&argc, &argv);
 
@@ -1525,11 +1397,11 @@ main (int    argc,
 
 		if (g_iDefaultWidth <= MIN_WIDTH ||
 		    g_iDefaultWidth >= MAX_WIDTH)
-			g_iDefaultWidth = 127;
+			g_iDefaultWidth = 100;
 
 		if (g_iDefaultHeight <= MIN_HEIGHT ||
 		    g_iDefaultHeight >= MAX_HEIGHT)
-			g_iDefaultHeight = 127;
+			g_iDefaultHeight = 100;
 
 		if (g_iRefreshRate <= MIN_REFRESH_RATE ||
 		    g_iRefreshRate >= MAX_REFRESH_RATE)
@@ -1552,7 +1424,6 @@ main (int    argc,
 			       &g_iSticky,
 			       &g_i24,
 			       &g_iRefreshRate);
-
 		if (pcFilename)
 			free (pcFilename);
 	}
@@ -1565,7 +1436,7 @@ main (int    argc,
 
 	if (bPrintThemeList)
 	{
-		print_theme_list ();
+		print_theme_list (g_pThemeList);
 		exit (0);
 	}
 
@@ -1660,22 +1531,19 @@ main (int    argc,
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pCheckButton24h),
 				      g_i24);
 
-	if (g_pThemeList)
+	pThemeEntry = g_list_first (g_pThemeList);
+	while (pThemeEntry)
 	{
-		pThemeEntry = g_pThemeList;
-		while (pThemeEntry)
+		gtk_combo_box_append_text (GTK_COMBO_BOX (pComboBoxTheme),
+					   ((ThemeEntry*) (pThemeEntry->data))->pName->str);
+		if (!strcmp (g_acTheme, ((ThemeEntry*) (pThemeEntry->data))->pName->str))
 		{
-			gtk_combo_box_append_text (GTK_COMBO_BOX (pComboBoxTheme),
-						   (gchar*) pThemeEntry->pcName);
-			if (!strcmp (g_acTheme, pThemeEntry->pcName))
-			{
-				gtk_combo_box_set_active (GTK_COMBO_BOX (pComboBoxTheme),
-							  g_iThemeCounter);
-				change_theme (pThemeEntry, g_iThemeCounter, NULL);
-			}
-			g_iThemeCounter++;
-			pThemeEntry = theme_entry_get_next (pThemeEntry);
+			gtk_combo_box_set_active (GTK_COMBO_BOX (pComboBoxTheme),
+						  g_iThemeCounter);
+			change_theme (g_pThemeList, g_iThemeCounter, NULL);
 		}
+		g_iThemeCounter++;
+		pThemeEntry = g_list_next (pThemeEntry);
 	}
 
 	rsvg_handle_get_dimensions (g_pSvgHandles[CLOCK_DROP_SHADOW],
