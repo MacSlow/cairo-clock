@@ -25,6 +25,8 @@
 
 * smooth hand animations
 
+* no more flashing of background clear-color upon startup
+
 * fixed close-button in about-dialog
 
 * added workaround for "white rectangle"-bug in xserver, see freedesktop
