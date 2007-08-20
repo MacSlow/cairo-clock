@@ -1,10 +1,12 @@
 cairo-clock (0.3.3-1) experimental; urgency=low
 
   * localized for da, de, en_GB, es, fi, fr, it, nl, pl, pt_PT, ru, sl, sv, tr, zh_CN and zh_TW
-  * using GOption and GList now
+  * using GOption, GList and GString for theme-list handling 
   * checking for a composited desktop-environment, thus depending on gtk+ >= 2.10.0
-  * brand new theme included
+  * brand new gremlin/gremlin-24 theme included (courtesy of Christian
+    "ChipX86" Hammond)
   * smooth hand animations
+  * no more flashing of backgrond-clear-color upon startup
   * close button in about-dialog works now/again
   * work-around for "white rectangle"-bug in Xorg (#11109)
 
