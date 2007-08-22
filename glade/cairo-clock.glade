@@ -371,6 +371,18 @@ Darryll "Moppsy" Truchan &lt;moppsy@comcast.net&gt;
 
 gremlin, gremlin-24:
 Christian "ChipX86" Hammond &lt;chipx86@chipx86.com&gt;</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">GTK_PACK_END</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
   </widget>
   <widget class="GtkWindow" id="settingsDialog">
     <property name="width_request">300</property>
@@ -447,7 +459,7 @@ custom</property>
                           <widget class="GtkSpinButton" id="spinbuttonHeight">
                             <property name="visible">True</property>
                             <property name="tooltip" translatable="yes">initial window-height when program starts</property>
-                            <property name="adjustment">127 32 1024 1 10 10</property>
+                            <property name="adjustment">127 32 1023 1 10 10</property>
                             <property name="climb_rate">1</property>
                             <accelerator key="e" modifiers="" signal="grab_focus"/>
                           </widget>
@@ -464,7 +476,7 @@ custom</property>
                           <widget class="GtkSpinButton" id="spinbuttonWidth">
                             <property name="visible">True</property>
                             <property name="tooltip" translatable="yes">initial window-width when program starts</property>
-                            <property name="adjustment">127 32 1024 1 10 10</property>
+                            <property name="adjustment">127 32 1023 1 10 10</property>
                             <property name="climb_rate">1</property>
                             <accelerator key="w" modifiers="" signal="grab_focus"/>
                           </widget>
@@ -795,5 +807,17 @@ custom</property>
     <property name="message_type">GTK_MESSAGE_ERROR</property>
     <property name="buttons">GTK_BUTTONS_CLOSE</property>
     <property name="text">You are not running under a composited desktop-environment (e.g. compiz). cairo-clock cannot work properly without one.</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox2">
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area2">
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">GTK_PACK_END</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
   </widget>
 </glade-interface>

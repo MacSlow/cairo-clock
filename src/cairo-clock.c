@@ -57,8 +57,8 @@
 #define MINUTE_INTERVAL	60000
 #define MIN_WIDTH	   32
 #define MIN_HEIGHT	   32
-#define MAX_WIDTH	 1024
-#define MAX_HEIGHT	 1024
+#define MAX_WIDTH	 1023
+#define MAX_HEIGHT	 1023
 #define MIN_REFRESH_RATE    1
 #define MAX_REFRESH_RATE   60
 
