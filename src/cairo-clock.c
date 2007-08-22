@@ -173,6 +173,22 @@ update_input_shape (GtkWidget* pWindow,
 		    gint       iWidth,
 		    gint       iHeight);
 
+static gboolean
+is_power_of_two (gint iValue)
+{
+	gint	 iExponent = 0;
+	gboolean bResult   = FALSE;
+
+	for (iExponent = 1; iExponent <= 32; iExponent++)
+		if ((unsigned long) iValue - (1L << iExponent) == 0)
+		{
+			bResult = TRUE;
+			break;
+		}
+
+	return bResult;
+}
+
 static void
 on_info_close (GtkDialog* pDialog,
 	       gpointer   data)
@@ -646,6 +662,12 @@ on_height_value_changed (GtkSpinButton*	pSpinButton,
 	gtk_window_get_size (GTK_WINDOW (window), &iWidth, &iOldHeight);
 	iNewHeight = gtk_spin_button_get_value_as_int (pSpinButton);
 
+	if (is_power_of_two (iNewHeight))
+	{
+		iNewHeight +=1;
+		gtk_spin_button_set_value (pSpinButton, (gdouble) iNewHeight);
+	}
+
 	if (iOldHeight != iNewHeight)
 	{
 		gtk_window_resize (GTK_WINDOW (window), iWidth, iNewHeight);
@@ -664,6 +686,12 @@ on_width_value_changed (GtkSpinButton* pSpinButton,
 	g_bNeedsUpdate = TRUE;
 	gtk_window_get_size (GTK_WINDOW (window), &iOldWidth, &iHeight);
 	iNewWidth = gtk_spin_button_get_value_as_int (pSpinButton);
+
+	if (is_power_of_two (iNewWidth))
+	{
+		iNewWidth +=1;
+		gtk_spin_button_set_value (pSpinButton, (gdouble) iNewWidth);
+	}
 
 	if (iOldWidth != iNewWidth)
 	{
@@ -1395,14 +1423,6 @@ main (int    argc,
 		    g_iDefaultY >= gdk_screen_get_height (gdk_screen_get_default ()))
 			g_iDefaultY = 0;
 
-		if (g_iDefaultWidth <= MIN_WIDTH ||
-		    g_iDefaultWidth >= MAX_WIDTH)
-			g_iDefaultWidth = 100;
-
-		if (g_iDefaultHeight <= MIN_HEIGHT ||
-		    g_iDefaultHeight >= MAX_HEIGHT)
-			g_iDefaultHeight = 100;
-
 		if (g_iRefreshRate <= MIN_REFRESH_RATE ||
 		    g_iRefreshRate >= MAX_REFRESH_RATE)
 			g_iRefreshRate = 30;
@@ -1427,6 +1447,20 @@ main (int    argc,
 		if (pcFilename)
 			free (pcFilename);
 	}
+
+	if (g_iDefaultWidth <= MIN_WIDTH ||
+	    g_iDefaultWidth >= MAX_WIDTH)
+		g_iDefaultWidth = 100;
+
+	if (is_power_of_two (g_iDefaultWidth))
+		g_iDefaultWidth += 1;
+
+	if (g_iDefaultHeight <= MIN_HEIGHT ||
+	    g_iDefaultHeight >= MAX_HEIGHT)
+		g_iDefaultHeight = 100;
+
+	if (is_power_of_two (g_iDefaultHeight))
+		g_iDefaultHeight += 1;
 
 	if (bPrintVersion)
 	{
