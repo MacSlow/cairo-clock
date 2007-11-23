@@ -2,7 +2,7 @@ AC_PREREQ([2.57])
 
 m4_define(cairo_clock_version_major, 0)
 m4_define(cairo_clock_version_minor, 3)
-m4_define(cairo_clock_version_micro, 3)
+m4_define(cairo_clock_version_micro, 4)
 
 AC_INIT([cairo-clock],
 	[cairo_clock_version_major().cairo_clock_version_minor().cairo_clock_version_micro()],

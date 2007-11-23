@@ -1,9 +1,9 @@
 Summary:        cairo-rendered on-screen clock 
 Name:           cairo-clock
-Version:        0.3.3
+Version:        0.3.4
 Release:        1
 URL:            http://macslow.thepimp.net/projects/cairo-clock
-Source0:        cairo-clock-0.3.3.tar.gz
+Source0:        cairo-clock-0.3.4.tar.gz
 License:        GPL
 Group:          User Interface/Desktops
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
