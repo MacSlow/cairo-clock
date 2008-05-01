@@ -61,6 +61,7 @@
 #define MAX_HEIGHT	 1023
 #define MIN_REFRESH_RATE    1
 #define MAX_REFRESH_RATE   60
+#define MAX_DATE_SIZE      20
 
 typedef enum _LayerElement
 {
@@ -124,7 +125,7 @@ gint		  g_iMinutes;
 gint		  g_iHours;
 gint		  g_iDay;
 gint		  g_iMonth;
-gchar		  g_acDate[6];
+gchar		  g_acDate[MAX_DATE_SIZE];
 static time_t	  g_timeOfDay;
 struct tm*	  g_pTime;
 gint		  g_i12			 = 0;	/* 12h hour-hand toggle       */
@@ -423,6 +424,8 @@ render (gint iWidth,
 	static double		    fAngleMinute      = 0.0f;
 	static double		    fAngleHour        = 0.0f;
 	static gboolean		    bAnimateMinute    = FALSE;
+	static GDate*               date;
+	static GTimeVal             timeVal;
 
 	fFactor = powf ((float) iFrames /
 			(float) g_iRefreshRate *
@@ -460,9 +463,12 @@ render (gint iWidth,
 			      360.0 /
 			      86400.0f;
 
-	g_iDay = g_pTime->tm_mday;
-	g_iMonth = g_pTime->tm_mon + 1;
-	sprintf (g_acDate, "%02d/%02d", g_iDay, g_iMonth);
+	date = g_date_new ();
+	g_date_clear (date, 1);
+	g_get_current_time (&timeVal);
+	g_date_set_time_val (date, &timeVal);
+	g_date_strftime (g_acDate, MAX_DATE_SIZE, "%x", date);
+	g_date_free (date);
 
 	cairo_set_operator (g_pMainContext, CAIRO_OPERATOR_SOURCE);
 
