@@ -20,8 +20,10 @@ missing
 po/POTFILES
 po/stamp-it
 po/*.gmo
+po/Makefile.in.in
 src/.deps/
 stamp-h1
 src/cairo_clock
 src/*.o
+aclocal.m4
 
