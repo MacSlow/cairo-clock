@@ -1,7 +1,7 @@
 bin_PROGRAMS = cairo_clock
 transform = s/_/-/g
 
-cairo_clock_LDFLAGS = -Wl, --export-dynamic
+cairo_clock_LDFLAGS = -Wl, -export-dynamic
 
 cairo_clock_LDADD =	\
 	$(GLIB_LIBS)	\
