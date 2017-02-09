@@ -18,6 +18,8 @@ libtool
 ltmain.sh
 missing
 po/POTFILES
+po/stamp-it
+po/*.gmo
 src/.deps/
 stamp-h1
 src/cairo_clock
