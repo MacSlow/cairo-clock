@@ -6,7 +6,7 @@
     <child>
       <widget class="GtkImageMenuItem" id="settingsMenuItem">
         <property name="visible">True</property>
-        <property name="label" translatable="yes">Properties</property>
+        <property name="label" translatable="yes">Settings</property>
         <property name="use_underline">True</property>
         <child internal-child="image">
           <widget class="GtkImage" id="image15">
@@ -20,7 +20,7 @@
     <child>
       <widget class="GtkImageMenuItem" id="infoMenuItem">
         <property name="visible">True</property>
-        <property name="label" translatable="yes">Info</property>
+        <property name="label" translatable="yes">About</property>
         <property name="use_underline">True</property>
         <child internal-child="image">
           <widget class="GtkImage" id="image16">

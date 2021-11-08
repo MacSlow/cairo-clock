@@ -53,7 +53,7 @@ msgid "H_eight:"
 msgstr "Höh_e:"
 
 #: ../glade/cairo-clock.glade.h:286
-msgid "Info"
+msgid "About"
 msgstr "Informationen"
 
 #: ../glade/cairo-clock.glade.h:287
@@ -73,7 +73,7 @@ msgid "MacSlow's Cairo-Clock - Settings"
 msgstr "MacSlow's Cairo-Clock - Einstellungen"
 
 #: ../glade/cairo-clock.glade.h:292
-msgid "Properties"
+msgid "Settings"
 msgstr "Eigenschaften"
 
 #: ../glade/cairo-clock.glade.h:293
