@@ -126,7 +126,6 @@ gint		  g_iHours;
 gint		  g_iDay;
 gint		  g_iMonth;
 gchar		  g_acDate[MAX_DATE_SIZE];
-static time_t	  g_timeOfDay;
 struct tm*	  g_pTime;
 gint		  g_i12			 = 0;	/* 12h hour-hand toggle       */
 gint		  g_i24			 = 0;	/* 24h hour-hand toggle       */
@@ -161,7 +160,6 @@ gboolean	  g_bNeedsUpdate	 = TRUE;
 cairo_surface_t*  g_pBackgroundSurface	 = NULL;
 cairo_surface_t*  g_pForegroundSurface	 = NULL;
 gint		  g_iRefreshRate	 = 30;
-GTimer*		  g_pTimer		 = NULL;
 gboolean	  bPrintThemeList	 = FALSE;
 gboolean	  bPrintVersion		 = FALSE;
 
@@ -188,6 +186,16 @@ is_power_of_two (gint iValue)
 		}
 
 	return bResult;
+}
+
+static gboolean
+on_info_deleted (GtkWidget* widget,
+		 GdkEvent*  event,
+		 gpointer   data)
+{
+	gtk_widget_hide (GTK_WIDGET (g_pInfoDialog));
+	/* Tell the framework not to destroy the window so we can show it again */
+	return TRUE;
 }
 
 static void
@@ -296,7 +304,12 @@ on_expose (GtkWidget*	   pWidget,
 	g_pMainContext = gdk_cairo_create (pWidget->window);
 	cairo_set_operator (g_pMainContext, CAIRO_OPERATOR_SOURCE);
 	gtk_window_get_size (GTK_WINDOW (pWidget), &iWidth, &iHeight);
-	if (g_bNeedsUpdate == TRUE)
+
+	if (g_bNeedsUpdate == TRUE
+		|| cairo_xlib_surface_get_width(g_pBackgroundSurface) != iWidth
+		|| cairo_xlib_surface_get_height(g_pBackgroundSurface) != iHeight
+		|| cairo_xlib_surface_get_width(g_pForegroundSurface) != iWidth
+		|| cairo_xlib_surface_get_height(g_pForegroundSurface) != iHeight)
 	{
 		g_pBackgroundSurface = update_surface (g_pBackgroundSurface,
 						       g_pMainContext,
@@ -320,10 +333,10 @@ static void
 on_alpha_screen_changed (GtkWidget* pWidget,
 			 GdkScreen* pOldScreen,
 			 GtkWidget* pLabel)
-{                       
+{
 	GdkScreen*   pScreen   = gtk_widget_get_screen (pWidget);
 	GdkColormap* pColormap = gdk_screen_get_rgba_colormap (pScreen);
-      
+
 	if (!pColormap)
 		pColormap = gdk_screen_get_rgb_colormap (pScreen);
 
@@ -415,17 +428,31 @@ render (gint iWidth,
 	static cairo_text_extents_t textExtents;
 	static double		    fFactor	      = 0.0f;
 	static gint		    iFrames	      = 0;
-	static gulong		    ulMilliSeconds    = 0;
-	static double		    fFullSecond	      = 0.0f;
-	static double		    fLastFullSecond   = 0.0f;
-	static double		    fCurrentTimeStamp = 0.0f;
-	static double		    fLastTimeStamp    = 0.0f;
 	static double		    fAngleSecond      = 0.0f;
 	static double		    fAngleMinute      = 0.0f;
 	static double		    fAngleHour        = 0.0f;
 	static gboolean		    bAnimateMinute    = FALSE;
-	static GDate*               date;
+	static GDate*               date              = NULL;
 	static GTimeVal             timeVal;
+
+	fHalfX = g_DimensionData.width / 2.0f;
+	fHalfY = g_DimensionData.height / 2.0f;
+
+	g_get_current_time (&timeVal);
+	g_pTime = localtime (&timeVal.tv_sec);
+	g_iSeconds = g_pTime->tm_sec;
+	g_iMinutes = g_pTime->tm_min;
+	g_iHours = g_pTime->tm_hour;
+	iFrames =  g_iRefreshRate * timeVal.tv_usec / 1000000;
+
+	fAngleSecond = (double) g_iSeconds * 6.0f;
+	bAnimateMinute = (fAngleSecond >= 354.0f);
+	if (fAngleSecond == 360.0f)
+		fAngleSecond = 0.0f;
+
+	fAngleMinute = (double) g_iMinutes * 6.0f;
+	if (fAngleMinute == 360.0f)
+		fAngleMinute = 0.0f;
 
 	fFactor = powf ((float) iFrames /
 			(float) g_iRefreshRate *
@@ -437,18 +464,6 @@ render (gint iWidth,
 			0.875f *
 			G_PI) *
 			0.1f;
-
-	fHalfX = g_DimensionData.width / 2.0f;
-	fHalfY = g_DimensionData.height / 2.0f;
-
-	time (&g_timeOfDay);
-	g_pTime = localtime (&g_timeOfDay);
-	g_iSeconds = g_pTime->tm_sec;
-	g_iMinutes = g_pTime->tm_min;
-	g_iHours = g_pTime->tm_hour;
-
-	if (!bAnimateMinute)
-		fAngleMinute = (double) g_iMinutes * 6.0f;
 
 	if (!g_i24)
 	{
@@ -462,13 +477,6 @@ render (gint iWidth,
 		fAngleHour = (g_iSeconds + 60 * g_iMinutes + 3600 * g_iHours) *
 			      360.0 /
 			      86400.0f;
-
-	date = g_date_new ();
-	g_date_clear (date, 1);
-	g_get_current_time (&timeVal);
-	g_date_set_time_val (date, &timeVal);
-	g_date_strftime (g_acDate, MAX_DATE_SIZE, "%x", date);
-	g_date_free (date);
 
 	cairo_set_operator (g_pMainContext, CAIRO_OPERATOR_SOURCE);
 
@@ -489,14 +497,21 @@ render (gint iWidth,
 
 	if (g_iShowDate)
 	{
+		if (date == NULL)
+			date = g_date_new ();
+		g_date_clear (date, 1);
+		g_date_set_time_val (date, &timeVal);
+		g_date_strftime (g_acDate, MAX_DATE_SIZE, "%x", date);
+
 		cairo_save (g_pMainContext);
 		cairo_set_source_rgb (g_pMainContext, 1.0f, 0.5f, 0.0f);
+		cairo_set_font_size (g_pMainContext, 6.0);
 		cairo_set_line_width (g_pMainContext, 5.0f);
 		cairo_text_extents (g_pMainContext, g_acDate, &textExtents);
 		cairo_rotate (g_pMainContext, (M_PI/180.0f) * 90.0f);
 		cairo_move_to (g_pMainContext,
 			       -textExtents.width / 2.0f,
-			       2.0f * textExtents.height);
+			       3.0f * textExtents.height);
 		cairo_show_text (g_pMainContext, g_acDate);
 		cairo_restore (g_pMainContext);
 	}
@@ -517,11 +532,6 @@ render (gint iWidth,
 	{
 		cairo_rotate (g_pMainContext,
 			      G_PI / 180.0f * (fAngleMinute + fFactor * 6.0f));
-		if (fFactor >= 0.95f)
-		{
-			bAnimateMinute = FALSE;
-			fAngleMinute = (double) g_iMinutes * 6.0f;
-		}
 	}
 	else
 		cairo_rotate (g_pMainContext, G_PI / 180.0f * fAngleMinute);
@@ -559,11 +569,6 @@ render (gint iWidth,
 	{
 		cairo_rotate (g_pMainContext,
 			      G_PI / 180.0f * (fAngleMinute + fFactor * 6.0f));
-		if (fFactor >= 0.95f)
-		{
-			bAnimateMinute = FALSE;
-			fAngleMinute = (double) g_iMinutes * 6.0f;
-		}
 	}
 	else
 		cairo_rotate (g_pMainContext, G_PI / 180.0f * fAngleMinute);
@@ -592,36 +597,6 @@ render (gint iWidth,
 				  0.0f,
 				  0.0f);
 	cairo_paint (g_pMainContext);
-
-	/* get the current time-stamp */
-	fCurrentTimeStamp = g_timer_elapsed (g_pTimer,
-					     &ulMilliSeconds);
-	ulMilliSeconds /= 1000;
-	fFullSecond = fCurrentTimeStamp - fLastFullSecond;
-
-	/* take care of the clock-hands anim-vars */
-	if (fFullSecond < 1.0f)
-		iFrames++;
-	else
-	{
-		iFrames = 0;
-		fLastFullSecond = fCurrentTimeStamp;
-
-		fAngleSecond = (double) g_iSeconds * 6.0f;
-
-		if (fAngleSecond == 360.0f)
-			fAngleSecond = 0.0f;
-
-		if (fAngleSecond == 354.0f)
-			bAnimateMinute = TRUE;
-
-		if (fAngleSecond == 360.0f)
-			fAngleSecond = 0.0f;
-
-		if (fAngleMinute == 360.0f)
-			fAngleMinute = 0.0f;
-	}
-	fLastTimeStamp = fCurrentTimeStamp;
 }
 
 static void
@@ -751,6 +726,8 @@ on_keep_on_top_toggled (GtkToggleButton* pTogglebutton,
 		g_iKeepOnTop = 0;
 
 	gtk_window_set_keep_above (GTK_WINDOW (window), g_iKeepOnTop);
+	gtk_window_set_keep_above (GTK_WINDOW (g_pSettingsDialog), g_iKeepOnTop);
+	gtk_window_set_keep_above (GTK_WINDOW (g_pInfoDialog), g_iKeepOnTop);
 }
 
 static void
@@ -929,12 +906,9 @@ write_settings (gchar* pcFilePath,
 }
 
 static void
-on_close_clicked (GtkButton* pButton,
-		  gpointer   data)
+save_settings (void)
 {
 	gchar* pcFilename = NULL;
-
-	gtk_widget_hide (g_pSettingsDialog);
 
 	pcFilename = get_preferences_filename ();
 	if (!write_settings (pcFilename,
@@ -955,6 +929,25 @@ on_close_clicked (GtkButton* pButton,
 
 	if (pcFilename)
 		free (pcFilename);
+}
+
+static gboolean
+on_settings_deleted (GtkWidget* widget,
+		     GdkEvent*  event,
+		     gpointer   data)
+{
+	gtk_widget_hide (g_pSettingsDialog);
+	save_settings ();
+	/* Tell the framework not to destroy the window so we can show it again */
+	return TRUE;
+}
+
+static void
+on_close_clicked (GtkButton* pButton,
+		  gpointer   data)
+{
+	gtk_widget_hide (g_pSettingsDialog);
+	save_settings ();
 }
 
 static GList*
@@ -1672,9 +1665,17 @@ main (int    argc,
 			  "activate",
 			  G_CALLBACK (on_quit_activate),
 			  NULL);
+	g_signal_connect (G_OBJECT (g_pSettingsDialog),
+			  "delete-event",
+			  G_CALLBACK (on_settings_deleted),
+			  NULL);
 	g_signal_connect (G_OBJECT (g_pInfoDialog),
 			  "response",
 			  G_CALLBACK (on_info_close),
+			  NULL);
+	g_signal_connect (G_OBJECT (g_pInfoDialog),
+			  "delete-event",
+			  G_CALLBACK (on_info_deleted),
 			  NULL);
 	g_signal_connect (G_OBJECT (g_pComboBoxStartupSize),
 			  "changed",
@@ -1747,7 +1748,6 @@ main (int    argc,
 	g_pMainContext = gdk_cairo_create (g_pMainWindow->window);
 
 	update_input_shape (g_pMainWindow, g_iDefaultWidth, g_iDefaultHeight);
-	g_pTimer = g_timer_new ();
 
 	gtk_main ();
 
@@ -1766,27 +1766,7 @@ main (int    argc,
 			     &g_iDefaultWidth,
 			     &g_iDefaultHeight);
 
-	pcFilename = get_preferences_filename ();
-	if (!write_settings (pcFilename,
-			     g_iDefaultX,
-			     g_iDefaultY,
-			     g_iDefaultWidth,
-			     g_iDefaultHeight,
-			     g_iShowSeconds,
-			     g_iShowDate,
-			     g_acTheme,
-			     g_iKeepOnTop,
-			     g_iAppearInPager,
-			     g_iAppearInTaskbar,
-			     g_iSticky,
-			     g_i24,
-			     g_iRefreshRate))
-		printf (_("Ups, error while trying to save the preferences!\n"));
+	save_settings ();
 
-	if (pcFilename)
-		free (pcFilename);
-
-	g_timer_destroy (g_pTimer);
-	
 	return 0;
 }

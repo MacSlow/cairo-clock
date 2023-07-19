@@ -1,4 +1,3 @@
-[encoding: UTF-8]
 desktop/cairo-clock.desktop.in
 glade/cairo-clock.glade
 src/cairo-clock.c

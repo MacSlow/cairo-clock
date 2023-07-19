@@ -56,7 +56,7 @@ msgid "H_eight:"
 msgstr "_Višina:"
 
 #: ../glade/cairo-clock.glade.h:286
-msgid "Info"
+msgid "About"
 msgstr "Informacije"
 
 #: ../glade/cairo-clock.glade.h:287
@@ -76,7 +76,7 @@ msgid "MacSlow's Cairo-Clock - Settings"
 msgstr "MacSlow Cairo Ura - Nastavitve"
 
 #: ../glade/cairo-clock.glade.h:292
-msgid "Properties"
+msgid "Settings"
 msgstr "Lastnosti"
 
 #: ../glade/cairo-clock.glade.h:293
