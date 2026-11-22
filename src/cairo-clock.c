@@ -43,6 +43,7 @@
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 #include <glade/glade.h>
+#include <cairo-xlib.h>
 #include <librsvg/rsvg.h>
 #include <librsvg/rsvg-cairo.h>
 #include <glib/gi18n.h>
